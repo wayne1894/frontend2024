@@ -15,7 +15,6 @@
 
 
 ### 作業練習1
-作業練習：
 
 練習透過模版來建立基本網頁，並了解版本控管與架站。  
 去網路搜尋 html5 template、或 html resume template 等關鍵字，挑選一個你喜歡的模版 ，並在 github 新增一個新的 Repositories (儲存庫)，把模版檔案放入版本控管裡。  
