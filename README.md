@@ -22,8 +22,8 @@
 看到不熟的 html 標籤沒關係 (可以去查) 只要更換圖片和文字即可。  
 這個作業可以讓你練習專案建立的流程，並透過模版來建立網頁
 
-##我的html基本教學
-### [連結] https://www.youtube.com/watch?v=ozvqtDI4RRE&list=PLq18pMPPU8e0q-m1p1uGHlH_nMs5Zyunu
+## 我的html基本教學
+### [連結](https://www.youtube.com/watch?v=ozvqtDI4RRE&list=PLq18pMPPU8e0q-m1p1uGHlH_nMs5Zyunu)
 
 ## 課程雲端資料夾
 ### [連結](https://drive.google.com/drive/u/2/folders/1fIceXle_J5QI6y3MRT-saymEh8OUYY2f)
