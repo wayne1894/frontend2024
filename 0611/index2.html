@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 1px solid black;
+        }
+        .box2{
+            border: 1px solid black;
+            padding: 10px;
+            /* padding-left: 10px;
+            padding-right: 10px; */
+        }
+        .box2 .box2_inner{
+            border: 1px solid red;
+        }
+        .box3{
+            border: 1px solid black;
+            width: 80px;
+            margin-top: 10px;
+            padding: 20px;
+        }
+        .box3 .box3_inner1{
+            border: 1px solid black;
+        }
+        .box3 .box3_inner2{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <span class="box1">span</span>
+    <span class="box2">
+        <span class="box2_inner">span</span>
+    </span>
+    <div class="box3">
+        <span class="box3_inner1">span</span>
+        <span class="box3_inner2">span</span>
+    </div>
+</body>
+</html>
