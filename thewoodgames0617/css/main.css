@@ -1,0 +1,36 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.main{
+    width: 900px;
+    background-color: aqua;
+
+    margin: 0 auto; /* 是針對塊級元素的置中*/
+
+    /* margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto; */
+}
+.main>header{
+    text-align: center;
+}
+.main>header>img.logo{ 
+    width: 200px;
+    /* display: block;
+    margin: 0 auto; */
+}
+/* img.logo{
+    width: 200px;
+} */
