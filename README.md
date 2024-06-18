@@ -23,6 +23,15 @@
 - 看到不熟的 html 標籤沒關係 (可以去查) 只要更換圖片和文字即可。
 - 這個作業可以讓你練習專案建立的流程，並透過模版來建立網頁。
 
+### 作業練習2
+
+- 可參考已經完成的成品
+- 使用你目前學到的 css 技巧，排出 thewoodgames 下方 footer 的版面
+- 元素建議使用 footer 標籤、ul li 撰寫。
+- 使用 hover 讓滑鼠移過去文字加上底線。
+
+- 盡量在多去看一些 css 屬性，加強你的記憶
+
 ## 我的html基本教學
 ### [連結](https://www.youtube.com/watch?v=ozvqtDI4RRE&list=PLq18pMPPU8e0q-m1p1uGHlH_nMs5Zyunu)
 
