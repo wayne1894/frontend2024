@@ -14,6 +14,7 @@
 ### [10 Inline-block 排版](https://docs.google.com/presentation/d/1A4XMzGgc7cMfToVuNWhOicIG4IPp452iU5SFsGbcsPo/edit?usp=sharing)
 ### [11 Flex 排版](https://docs.google.com/presentation/d/1MngM-LBiTgOIjNDVI1_YTnPfC7n5GjqtysPLPZSGLMw/edit?usp=sharing)
 ### [12 CSS Rwd 響應式網頁](https://docs.google.com/presentation/d/1pAmbEz2jvd9mCFw99RzwuWRcY-99k9vReF3ZtDwD7hM/edit?usp=sharing)
+### [13 CSS 綜合應用](https://docs.google.com/presentation/d/1d2SU-uONRGa7yjk5oWfUgnLdi1ci043s_B9KgJht8lY/edit?usp=sharing)
 
 ### 作業練習1
 
