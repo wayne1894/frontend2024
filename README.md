@@ -26,7 +26,7 @@
 
 ### 作業練習2
 
-- 可參考已經完成的成品
+- 可參考我提供給大家的thewoodgames完成品
 - 使用你目前學到的 css 技巧，排出 thewoodgames 下方 footer 的版面
 - 元素建議使用 footer 標籤、ul li 撰寫。
 - 使用 hover 讓滑鼠移過去文字加上底線。
