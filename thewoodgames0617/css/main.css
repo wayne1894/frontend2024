@@ -13,11 +13,11 @@ html {
 }
 
 .main{
-    width: 900px;
-    background-color: aqua;
+    width: 100%;
+    max-width: 900px;
+    /* background-color: aqua; */
 
     margin: 0 auto; /* 是針對塊級元素的置中*/
-
     /* margin-top: 0;
     margin-bottom: 0;
     margin-left: auto;
@@ -25,8 +25,11 @@ html {
 }
 .main>header{
     text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* background-color: aquamarine; */
 }
-.main>header>img.logo{ 
+.main>header img.logo{ 
     width: 200px;
     /* display: block;
     margin: 0 auto; */
@@ -34,3 +37,39 @@ html {
 /* img.logo{
     width: 200px;
 } */
+ .main>nav{
+    /* background-color: aquamarine; */
+    border-top: 1px solid #8a8000;
+    border-bottom: 1px solid #8a8000;
+    margin-bottom: 40px;
+ }
+ .main>nav>ul>li{
+    display: inline-block;
+    width: 33.333333%;
+    /* background-color: red; */
+    margin-right: -4px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+
+    font-size: 28px;
+    font-weight: bold;
+ }
+ .main>nav>ul>li>a{
+    color: #000;
+    text-decoration: none;
+    /* background-color: red; */
+    display: block;
+ }
+ .main>nav>ul>li>a:hover{
+    background-color: #dcdddd;
+ }
+
+ .main>nav>ul>li .text_en{
+    color: #8a8000;
+ }
+
+ .main>.content img{
+    width: 100%;
+ }
+ 
