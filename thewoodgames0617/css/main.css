@@ -73,3 +73,24 @@ html {
     width: 100%;
  }
  
+
+/* 這是shop.html 的 css */
+.shop_content>.item>.item_left{
+    display: inline-block;
+    width: 20%;
+    margin-right: -4px;
+}
+.shop_content>.item>.item_left img{
+    width: 100%;
+}
+.shop_content>.item>.item_mid{
+    display: inline-block;
+    width: 40%;
+    margin-right: -4px;
+    vertical-align: top
+}
+.shop_content>.item>.item_right{
+    display: inline-block;
+    width: 40%;
+    margin-right: -4px;
+}
