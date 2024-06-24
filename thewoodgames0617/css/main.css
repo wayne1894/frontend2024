@@ -43,11 +43,17 @@ html {
     border-bottom: 1px solid #8a8000;
     margin-bottom: 40px;
  }
+ .main>nav>ul{
+    display: flex;
+ }
  .main>nav>ul>li{
-    display: inline-block;
-    width: 33.333333%;
-    /* background-color: red; */
-    margin-right: -4px;
+
+    /* display: inline-block;
+    width: 25%; 
+    margin-right: -4px; */
+
+    flex: 1;
+
     height: 80px;
     line-height: 80px;
     text-align: center;
@@ -72,31 +78,26 @@ html {
  .main>.content img{
     width: 100%;
  }
- 
 
-/* 這是shop.html 的 css */
-.shop_content>p{
+ /* 這是 shop.html 的 css 這是 flex 的排版方式 */
+ .shop_content>p{
     margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 .shop_content>.item{
+    display: flex;
     border: 1px solid #8a8000;
     padding: 7px;
-    padding-right: 13px;
+    gap: 10px;
 }
 .shop_content>.item>.item_left{
-    display: inline-block;
     width: 20%;
-    margin-right: -4px;
 }
 .shop_content>.item>.item_left img{
     width: 100%;
 }
 .shop_content>.item>.item_mid{
-    display: inline-block;
     width: 40%;
-    margin-right: -4px;
-    vertical-align: top;
-    padding: 0 6px;
 }
 .shop_content>.item>.item_mid h2{
     font-size: 24px;
@@ -104,42 +105,9 @@ html {
 }
 .shop_content>.item>.item_mid p{
     color: #8a8000;
-    margin-top: 60px;
     font-weight: bold;
 }
 .shop_content>.item>.item_right{
-    display: inline-block;
     width: 40%;
-    margin-right: -4px;
-    vertical-align: top;
-}
-.shop_content>.item>.item_right>.item_title{
-    font-weight: bold;
-    border-bottom: 1px solid #8a8000;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-.shop_content>.item>.item_right>.item_child>.item_child_left{
-    display: inline-block;
-    width: 60%;
-    margin-right: -4px;
-}
-.shop_content>.item>.item_right>.item_child>.item_child_right{
-    display: inline-block;
-    width: 40%;
-    margin-right: -4px;
-    vertical-align: top;
-    text-align: right;
 }
 
-.buy_btn{
-    text-decoration: none;
-    background-color: #8a8000;
-    color: #fff;
-    padding: 8px 10px;
-    border-radius: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    /* margin-top: 5px; */
-    display: inline-block;
-}
