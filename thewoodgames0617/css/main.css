@@ -75,6 +75,14 @@ html {
  
 
 /* 這是shop.html 的 css */
+.shop_content>p{
+    margin-bottom: 20px;
+}
+.shop_content>.item{
+    border: 1px solid #8a8000;
+    padding: 7px;
+    padding-right: 13px;
+}
 .shop_content>.item>.item_left{
     display: inline-block;
     width: 20%;
@@ -87,10 +95,51 @@ html {
     display: inline-block;
     width: 40%;
     margin-right: -4px;
-    vertical-align: top
+    vertical-align: top;
+    padding: 0 6px;
+}
+.shop_content>.item>.item_mid h2{
+    font-size: 24px;
+    font-weight: bold;
+}
+.shop_content>.item>.item_mid p{
+    color: #8a8000;
+    margin-top: 60px;
+    font-weight: bold;
 }
 .shop_content>.item>.item_right{
     display: inline-block;
     width: 40%;
     margin-right: -4px;
+    vertical-align: top;
+}
+.shop_content>.item>.item_right>.item_title{
+    font-weight: bold;
+    border-bottom: 1px solid #8a8000;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.shop_content>.item>.item_right>.item_child>.item_child_left{
+    display: inline-block;
+    width: 60%;
+    margin-right: -4px;
+}
+.shop_content>.item>.item_right>.item_child>.item_child_right{
+    display: inline-block;
+    width: 40%;
+    margin-right: -4px;
+    vertical-align: top;
+    text-align: right;
+}
+
+.buy_btn{
+    text-decoration: none;
+    background-color: #8a8000;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* margin-top: 5px; */
+    display: inline-block;
 }
