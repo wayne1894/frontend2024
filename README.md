@@ -36,6 +36,11 @@
 
 - 盡量在多去看一些 css 屬性，加強你的記憶
 
+### 作業練習3
+
+- 可參考我提供給大家的thewoodgames完成品
+- 使用你目前學到的 css 技巧，排出 thewoodgames product.html、about.html
+
 ## 我的html基本教學
 ### [連結](https://www.youtube.com/watch?v=ozvqtDI4RRE&list=PLq18pMPPU8e0q-m1p1uGHlH_nMs5Zyunu)
 
