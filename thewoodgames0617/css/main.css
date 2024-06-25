@@ -80,15 +80,22 @@ html {
  }
 
  /* 這是 shop.html 的 css 這是 flex 的排版方式 */
- .shop_content>p{
+ .shop_content{
+    margin-bottom: 40px;
+ }
+ .shop_p{
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
 .shop_content>.item{
     display: flex;
     border: 1px solid #8a8000;
+    border-bottom: none;
     padding: 7px;
     gap: 10px;
+}
+.shop_content>.item:last-child{
+    border-bottom:1px solid #8a8000;
 }
 .shop_content>.item>.item_left{
     width: 30%;
@@ -139,4 +146,25 @@ html {
     font-weight: bold;
     letter-spacing: 1px;
     display: inline-block;
+}
+
+footer{
+    background-color: #8a8000;
+}
+footer>.main{
+    display: flex;
+    height: 120px;
+    padding-top: 20px;
+}
+footer>.main>ul{
+    display: flex;
+    gap: 20px;
+    margin-right: auto;
+}
+footer>.main>ul>li>a{
+    color: #fff;
+    text-decoration: none;
+}
+footer>.main>.footer_logo{
+    color: #fff;
 }
