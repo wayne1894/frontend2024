@@ -151,7 +151,10 @@ html {
 footer{
     background-color: #8a8000;
 }
-footer>.main{
+
+/* flex解決方案1 */
+
+/* footer>.main{
     display: flex;
     height: 120px;
     padding-top: 20px;
@@ -160,6 +163,48 @@ footer>.main>ul{
     display: flex;
     gap: 20px;
     margin-right: auto;
+}
+footer>.main>ul>li>a{
+    color: #fff;
+    text-decoration: none;
+}
+footer>.main>.footer_logo{
+    color: #fff;
+} */
+
+/* flex解決方案2 */
+
+/* footer>.main{
+    display: flex;
+    height: 120px;
+    padding-top: 20px;
+}
+footer>.main>ul{
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+footer>.main>ul>li>a{
+    color: #fff;
+    text-decoration: none;
+}
+footer>.main>.footer_logo{
+    flex: 1;
+    text-align: right;
+    color: #fff;
+} */
+
+/* flex解決方案3 */
+footer>.main{
+    display: flex;
+    height: 120px;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding-top: 20px;
+}
+footer>.main>ul{
+    display: flex;
+    gap: 20px;
 }
 footer>.main>ul>li>a{
     color: #fff;
