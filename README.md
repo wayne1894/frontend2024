@@ -15,6 +15,9 @@
 ### [11 Flex 排版 (重要)](https://docs.google.com/presentation/d/1MngM-LBiTgOIjNDVI1_YTnPfC7n5GjqtysPLPZSGLMw/edit?usp=sharing)
 ### [12 CSS Rwd 響應式網頁](https://docs.google.com/presentation/d/1pAmbEz2jvd9mCFw99RzwuWRcY-99k9vReF3ZtDwD7hM/edit?usp=sharing)
 ### [13 CSS 綜合應用](https://docs.google.com/presentation/d/1d2SU-uONRGa7yjk5oWfUgnLdi1ci043s_B9KgJht8lY/edit?usp=sharing)
+### [14 position 排版](https://docs.google.com/presentation/d/1J4Amczo0ljpBk6ojme4d-1iyvzG2xwaGmv5F7CRH1dk/edit?usp=sharing)
+### [15 web 動畫技術應用與研究](https://docs.google.com/presentation/d/1Thcyh_1txgOiPs93EpO5rTwmqdfWyNSVX16KaCbxFZI/edit?usp=sharing)
+
 
 ### 作業練習1
 
