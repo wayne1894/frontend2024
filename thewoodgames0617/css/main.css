@@ -60,14 +60,30 @@ html {
     font-size: 28px;
     font-weight: bold;
  }
- .main>nav>ul>li>a{
+ .main>nav>ul>li>.nav_item{
     color: #000;
     text-decoration: none;
-    /* background-color: red; */
     display: block;
  }
- .main>nav>ul>li>a:hover{
+ .main>nav>ul>li>.nav_item>.nav_child{
+    display: none;
+ }
+ .main>nav>ul>li>.nav_item>.nav_child a{
+    background-color: #8a8000;
+    text-decoration: none;
+    color: #fff;
+    line-height: 20px;
+    font-size: 16px;
+    display: block;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+ .main>nav>ul>li>.nav_item:hover{
     background-color: #dcdddd;
+ }
+ .main>nav>ul>li>.nav_item:hover .nav_child{
+    display: block;
  }
 
  .main>nav>ul>li .text_en{

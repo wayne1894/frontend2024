@@ -11,28 +11,39 @@
             height: 100vh;
             background-size: contain;
         }
+        .box1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+
+            position: relative;
+            left: 450px; 
+            top: 300px; 
+        }
         .obj1{
             position: absolute;
-            left: 300px;
-            top: 500px;
+            top: 200px;
+            left: 0;
         }
         .obj2{
             position: absolute;
-            left: 200px;
-            top: 400px; 
-            z-index: 1;
+            left: 100px;
+            top: 100;
+            z-index: 3;
         }
         .obj3{
             position: absolute;
-            left: 200px;
-            top: 400px; 
-            z-index: 2;
+            left: 50px;
+            top: 50;
+            z-index: 5;
         }
     </style>
 </head>
 <body>
-    <img class="obj1" src="https://citycreator.com/blocks/2/build_4.gif" alt="">
-    <img class="obj2" src="https://citycreator.com/blocks/2/build_11.gif" alt="">
-    <img class="obj3" src="https://citycreator.com/blocks/2/build_6.gif" alt="">
+    <div class="box1">
+        <img class="obj1" src="https://citycreator.com/blocks/2/build_4.gif" alt="">
+        <img class="obj2" src="https://citycreator.com/blocks/2/build_11.gif" alt="">
+        <img class="obj3" src="https://citycreator.com/blocks/2/build_6.gif" alt="">
+    </div>
 </body>
 </html>
