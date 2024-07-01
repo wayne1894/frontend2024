@@ -64,9 +64,12 @@ html {
     color: #000;
     text-decoration: none;
     display: block;
+    position: relative;
  }
  .main>nav>ul>li>.nav_item>.nav_child{
     display: none;
+    position: absolute;
+    width: 100%;
  }
  .main>nav>ul>li>.nav_item>.nav_child a{
     background-color: #8a8000;
@@ -84,6 +87,9 @@ html {
  }
  .main>nav>ul>li>.nav_item:hover .nav_child{
     display: block;
+ }
+ .main>nav>ul>li>.nav_item .nav_child>a:hover{
+    background-color: #000;
  }
 
  .main>nav>ul>li .text_en{
