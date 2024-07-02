@@ -1,13 +1,74 @@
 @import '_variables'; //引入全域變數
-//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap'); //引入google font
+@import "../node_modules/bootstrap/scss/bootstrap";
 
-
-@import 'demo.scss'; //引入demo.scss
-
-body{
-    color:  var(--primary);
+// 這是 reset 
+ul,ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
 }
 
-// body{
-//     background-image: url(../img/demo.png);
-// }
+//這是 header
+header{
+    height: 100vh;
+    background-color: black;
+    // background-image: url(../img/bg/bg-32.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    nav{
+        padding: 0 35px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        ul.nav_left{
+            display: flex;
+            margin-top: 19px;
+            gap: 2px;
+            .nav_menu{
+                display: none;
+                position: absolute;
+                width: 150px;
+                ol{
+                    margin-top: 15px;
+                }
+                a{
+                    background-color: #f8f8f8;
+                    color: #000;
+                    display: block;
+                    padding: 10px 20px;
+                    font-size: 15px;
+                    &:hover{
+                        background-color: #fff;
+                    }
+                }
+            }
+            >li{
+                border-radius: 10px;
+                >a{
+                    color: #fff;
+                    font-size: 15px;
+                    display: block;
+                    padding: 4px 10px;
+                }
+                &:hover{
+                    background-color: #d01a48;
+                    .nav_menu{
+                        display: block;
+                    }
+                }
+            }
+        }
+        ul.nav_right{
+            display: flex;
+            margin-top: 19px;
+            margin-left: auto;
+        }
+        .nav_search{
+            margin-top: 19px;
+        }
+    }
+}
