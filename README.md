@@ -43,8 +43,8 @@
 
 ### 作業練習4
 - 某龜毛的客戶要求實作一個網頁版面，這個版面有5個欄位，左側必需完全符合A4紙張的比例大小(因為客戶指定圖片是a4要放在左側) ，而右邊會有四個欄位，也要平均分配。
-- 這個作業的完成答案在 https://codepen.io/yoozoo/pen/GReYXEq?editors=1100 但我建議你先看完成的部份，而用你目前僅有的能力看能否實作出來
-- 這個作業的難度算高，所以可以好好思考一下，因為你以後會遇到千奇百怪的難題，可搭配 flex 和 position 來實作。
+- 這個作業的完成答案在 https://codepen.io/yoozoo/pen/GReYXEq?editors=1100 但我建議先看完成的部份，而用你目前僅有的能力看能否實作出來
+- 這個作業的難度算高，所以可以好好思考一下，因為以後會遇到許多千奇百怪的難題，可搭配 flex 和 position 來實作。
 
 ## 我的html基本教學
 ### [連結](https://www.youtube.com/watch?v=ozvqtDI4RRE&list=PLq18pMPPU8e0q-m1p1uGHlH_nMs5Zyunu)
