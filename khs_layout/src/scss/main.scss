@@ -25,6 +25,12 @@ header{
         gap: 20px;
 //				background: red;
 				height: 75px;
+        .logo .mobile{
+            display: none;
+        }
+        .logo .pc{
+            display: block;
+        }
         ul.nav_left{
             display: flex;
             margin-top: 19px;
@@ -61,6 +67,9 @@ header{
                         display: block;
                     }
                 }
+            }
+            &.collapse:not(.show){
+                display: flex!important;
             }
         }
         ul.nav_right{
@@ -139,6 +148,25 @@ header{
     }
 }
 
+.nav_mobile{
+    position: relative;
+    cursor: pointer;
+    top: 10px;
+    display: none;
+   .menu{
+      width: 32px;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+   .menu .line{
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px;
+      border-radius: 3px;
+    }
+}
+
 .public_icon{
 	width: 30px;
 	height: 30px;
@@ -159,4 +187,50 @@ header{
 	&.icon_line{
 		background-image: url(https://khsmusicweb.blob.core.windows.net/public/uploads/indexManage/1641959874.png)
 	}
+}
+
+@media(max-width: 991px){
+    header{
+        nav{
+            padding: 0 15px;
+            .logo .mobile{
+                display: block;
+            }
+            .logo .pc{
+                display: none;
+            }
+            ul.nav_left{
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                >li{
+                    background-color: #fff;
+                    width: 100%;
+                    text-align: left;
+                    height: 58px;
+                    line-height: 58px;
+                    border-radius: 0;
+                    border-bottom: 1px solid #bbb;
+                    a{
+                        color: #000;
+                    }
+                    &:hover{
+                        background-color: #fff;
+                        .nav_menu{
+                            display: none;
+                        }
+                    }
+                }
+                &.collapse:not(.show){
+                    display: none!important;
+                }
+            } 
+        }
+    }
+    .nav_mobile{
+        display: block;
+    }
 }

@@ -9,8 +9,11 @@
 <body>
     <header>
         <nav>
-            <a class="logo" href="#"><img src="img/LOGO1.svg" alt=""></a>
-            <ul class="nav_left">
+            <a class="logo" href="#">
+                <img class="pc" src="img/LOGO1.svg" alt="">
+                <img class="mobile" src="img/LOGO2.svg" alt="">
+            </a>
+            <ul id="navbarCollapse" class="nav_left navbar-collapse collapse">
                 <li>
                     <a href="#">關於我們</a>
                     <div class="nav_menu">
@@ -49,6 +52,15 @@
                 <li><a class="public_icon icon_youtube" href="#">youtube</a></li>
                 <li><a class="public_icon icon_line" href="#">line</a></li>
             </ul>
+            <div class="nav_mobile" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="menu">
+                    <div class="line line0"></div>
+                    <div class="line_parent">
+                        <div class="line line1"></div>
+                        <div class="line line2"></div>
+                    </div>
+                </div>
+            </div>
             <div class="nav_search">搜尋</div>
         </nav>
         <div class="bottom_area">
