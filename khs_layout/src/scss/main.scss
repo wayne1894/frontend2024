@@ -10,7 +10,6 @@ ul,ol{
 a{
     text-decoration: none;
 }
-
 //這是 header
 header{
     height: 100vh;
@@ -24,6 +23,8 @@ header{
         display: flex;
         align-items: center;
         gap: 20px;
+//				background: red;
+				height: 75px;
         ul.nav_left{
             display: flex;
             margin-top: 19px;
@@ -66,9 +67,96 @@ header{
             display: flex;
             margin-top: 19px;
             margin-left: auto;
+					  gap:10px;
         }
         .nav_search{
             margin-top: 19px;
+						width: 25px;
+						height: 25px;
+						text-indent: -9999px;
+						background-image: url(../img/search.svg);
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center;
         }
     }
+    .go_down{
+        position: absolute;
+        left: 50%;
+        margin-left: -65px;
+        bottom: 18px;
+        width: 136px;
+        height: 47px;
+        background-image: url(../img/go_down.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        text-indent: -9999px;
+    }
+    .bottom_area{
+        position: absolute;
+        color: #fff;
+        height: 240px;
+        width: 100%;
+        max-width: 800px;
+        left: 0;
+        bottom: 0;
+        padding-left: 33px;
+        background-image: url(../img/bottom_area.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        h1{
+            position: absolute;
+            top: -30%;
+            font-size: 39px;
+            letter-spacing: 2px;
+            font-weight: lighter;
+        }
+        p{
+            width: 40%;
+            position: absolute;
+            top: 11%;
+            line-height: 27px;
+        }
+        a{
+            display: block;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            width: 108px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+            position: absolute;
+            bottom: 24px;
+            &:hover{
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+}
+
+.public_icon{
+	width: 30px;
+	height: 30px;
+//	background-color: red;
+	text-indent: -9999px;
+	display: inline-block;
+	
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+	&.icon_facebook{
+		background-image: url(https://khsmusicweb.blob.core.windows.net/public/uploads/indexManage/1641959728.png)
+	}
+	&.icon_youtube{
+		background-image: url(https://khsmusicweb.blob.core.windows.net/public/uploads/indexManage/1641959429.png)
+	}
+	&.icon_line{
+		background-image: url(https://khsmusicweb.blob.core.windows.net/public/uploads/indexManage/1641959874.png)
+	}
 }
