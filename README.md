@@ -46,6 +46,12 @@
 - 這個作業的完成答案在 https://codepen.io/yoozoo/pen/GReYXEq?editors=1100 但我建議先看完成的部份，而用你目前僅有的能力看能否實作出來
 - 這個作業的難度算高，所以可以好好思考一下，因為以後會遇到許多千奇百怪的難題，可搭配 flex 和 position 來實作。
 
+### 作業練習5
+- 有時候不會走路要先學會飛 -鋼鐵人
+- 這次我們直接拿現成的設計稿來練習，運用你這幾週學到的方法，實作一個普通官網的設計稿，切版要考量手機版並盡可能嚴格的對焦
+- 設計稿連結：https://xd.adobe.com/view/99e4de95-0faa-4f24-8f3f-a38b91113f5e-ccb7/?fullscreen
+- 若你想偷看成品，也是沒問題的：https://www.flno1.com.tw/
+
 ## 我的html基本教學
 ### [連結](https://www.youtube.com/watch?v=ozvqtDI4RRE&list=PLq18pMPPU8e0q-m1p1uGHlH_nMs5Zyunu)
 
