@@ -1,3 +1,49 @@
-body{
-    background-image: url(../img/demo.png);
+@import '_variables'; //引入全域變數
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// 這是 reset 
+ul,ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    .nav_mobile{
+        margin-left: auto;
+        display: none;
+    }
+    ul{
+        display: flex;
+        &.collapse:not(.show){
+            display: flex!important;
+        }
+    }
+}
+
+@media(max-width: 991px){
+    header{
+        .nav_mobile{
+            display: block;
+        }
+        ul{
+            flex-direction: column;
+            position: absolute;
+            top: 20px;
+            background-color: red;
+            width: 100%;
+            &.collapse:not(.show){
+                display: none!important;
+            }
+            li{
+                text-align: center;
+            }
+        }
+    }
 }
