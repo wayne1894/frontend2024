@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        .wrap{
+            margin: 30px auto;
+            max-width: 800px;
+            width: 100%;
+            /* height: 100vh; */
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .scale{
+            transform: scale(1,1);
+            transition: transform 0.5s ease;
+        }
+        .box:hover.scale{
+            transform: scale(1.5,1.5);
+        }
+        .scaleX{
+            transform: scaleX(1);
+            transition: transform 0.5s ease;
+        }
+        .box:hover.scaleX{
+            transform: scaleX(1.5);
+        }
+        .rotate{
+            transform:rotate(0deg);
+            transition: transform 0.5s ease;
+        }
+        .box:hover.rotate{
+            transform:rotate(155deg);
+        }
+        .translate{
+            transform: translate(0,0);
+            transition: transform 0.5s ease;
+        }
+        .box:hover.translate{
+            transform: translate(30px,30px);
+        }
+        .other{
+            transform: translate(120px) rotate(80deg) scale(0.5);
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box scale">scale</div>
+        <div class="box scaleX">scaleX</div>
+        <div class="box rotate">rotate</div>
+        <div class="box translate">translate</div>
+        <div class="box other">other</div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
