@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
    	<link rel="stylesheet" href="scss/main.scss">
 </head>
 <body>
@@ -63,6 +67,26 @@
             </div>
             <div class="nav_search">搜尋</div>
         </nav>
+          <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/800/600?random=1" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/800/600?random=2" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/800/600?random=3" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://picsum.photos/800/600?random=4" />
+            </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
         <div class="bottom_area">
             <h1>全心灌溉熱愛音樂的幼苗</h1>
             <p>功學社取自「貢獻」、「學校」、「社會」，我們希望用優質的樂器與熱誠的音樂教育，將藝術的種子散布在台灣各處，同時走向國際名揚台灣精神。</p>
@@ -70,6 +94,68 @@
         </div>
         <a class="go_down" href="#">down</a>
     </header>
+    <main>
+        <section class="service">
+            <h2>
+                <div class="service_h2">
+                    <span>服務項目</span>
+                </div>
+            </h2>
+            <div class="service_parent">
+                 <div class="service_inner">
+                        <a href="/product">
+                         <div class="service_img">
+                             <div class="inner bg" style="background-image: url(//khsmusicweb.blob.core.windows.net/public/src/static/images/bg/bg-33.png)"></div>
+                         </div>
+                        </a>
+                        <div class="service_text">
+                             <div class="service_bg"></div>
+                             <div class="service_inner">
+                                 <h3><a href="/product">產品介紹</a></h3>
+                                 <p>鋼琴、電子琴、各種管樂器、弦樂器、打擊樂器及數位樂器之銷售及維修服務。</p>
+                             </div>
+                             <div class="service_more arrow_wrap">
+                                 <a href="/product">了解更多<span class="arrow"></span></a>
+                             </div>
+                        </div>
+                 </div>
+                 <div class="service_inner">
+                        <a href="/product">
+                         <div class="service_img zoom">
+                             <div class="inner bg" style="background-image: url(//khsmusicweb.blob.core.windows.net/public/src/static/images/bg/bg-33.png)"></div>
+                         </div>
+                        </a>
+                        <div class="service_text">
+                             <div class="service_bg"></div>
+                             <div class="service_inner">
+                                 <h3><a href="/product">產品介紹</a></h3>
+                                 <p>鋼琴、電子琴、各種管樂器、弦樂器、打擊樂器及數位樂器之銷售及維修服務。</p>
+                             </div>
+                             <div class="service_more arrow_wrap">
+                                 <a href="/product">了解更多<span class="arrow"></span></a>
+                             </div>
+                        </div>
+                 </div>
+            </div>
+        </section>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        });
+    </script>
 </body>
 </html>

@@ -10,19 +10,31 @@ ul,ol{
 a{
     text-decoration: none;
 }
+
+// 這是滑鼠全選的顏色
+::selection{
+    background-color: #D01A48;
+    color: #fff;
+}
+img::selection{
+    background: transparent;
+}
+
 //這是 header
 header{
     height: 100vh;
-    background-color: black;
+    // background-color: black;
     // background-image: url(../img/bg/bg-32.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
     nav{
         padding: 0 35px;
         display: flex;
         align-items: center;
         gap: 20px;
+        position: relative;
+        z-index: 10;
 //				background: red;
 				height: 75px;
         .logo .mobile{
@@ -189,6 +201,233 @@ header{
 	}
 }
 
+//swiper 輪播圖
+.swiper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  //輪圖覆蓋上下漸層
+ .swiper-slide{
+    &::before{
+        content: "";
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, black 100%);
+        width:100%;
+        height:50%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        opacity: 0.55;
+    }
+    &::after{
+        content:"";
+        background-color: rgba(0, 0, 0, 0.3);
+        width:100%;
+        height:100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+ }
+
+ .swiper-pagination{
+    text-align: right;
+    padding-right: 20px;
+    width: 30% !important;
+    left: auto !important;
+    right: 0 !important;
+}
+.swiper-pagination-bullet{
+    width: 13px;
+    height: 33px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='13.238px' height='10.4px' viewBox='0 0 13.238 10.4' enable-background='new 0 0 13.238 10.4' xml:space='preserve'%3E%3Cg%3E%3Cpath fill='%23FFFFFF' d='M12.903,2.048c-1.146-2.284-4.888-2.724-8.358-0.982C1.074,2.807-0.81,6.069,0.335,8.353 c1.146,2.284,4.888,2.723,8.358,0.983C12.164,7.594,14.049,4.332,12.903,2.048z M4.463,9.245c-1.495,0-2.651-0.527-3.095-1.41 C0.864,6.829,1.366,5.68,1.709,5.084C2.393,3.9,3.584,2.84,5.063,2.099c1.229-0.617,2.512-0.942,3.712-0.942 c1.495,0,2.652,0.527,3.095,1.41c0.505,1.006,0.003,2.155-0.341,2.751C10.845,6.5,9.654,7.561,8.175,8.302 C6.947,8.919,5.664,9.245,4.463,9.245L4.463,9.245z'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    border-radius: inherit;
+    opacity: 1;
+    filter: drop-shadow(2px 2px 5px #505050);
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    width: 13px;
+    height: 33px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='13.239px' height='32.787px' viewBox='0 0 13.239 32.787' enable-background='new 0 0 13.239 32.787' xml:space='preserve'%3e%3cg%3e%3cg%3e%3cellipse transform='matrix(0.8938 -0.4484 0.4484 0.8938 -11.6672 5.897)' fill='%23D01A48' cx='6.619' cy='27.586' rx='7.03' ry='4.626'/%3e%3c/g%3e%3crect x='12.16' fill='%23D01A48' width='1.079' height='25.864'/%3e%3c/g%3e%3c/svg%3e");
+    opacity: 1;
+    filter: drop-shadow(2px 2px 5px #505050);
+}
+
+
+//這是 service
+.service {
+    background-color: #D01A48;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    h2 {
+        width: 100%;
+        height: 80px;
+        background-color: #fff;
+        text-align: right;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 10%;
+            height: 77px;
+            display: block;
+            background-color: #D01A48;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .service_h2 {
+            max-width: 1320px;
+            margin: 0 auto;
+            width: 100%;
+
+            span {
+                z-index: 1;
+                position: relative;
+                top: 20px;
+                letter-spacing: 10px;
+                right: 18px;
+                color: #fff;
+            }
+        }
+
+        .service_h2::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 105px;
+            top: -21px;
+            right: 0;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 100'%3E%3Cstyle%3E.st0%7Bfill:%23d01a48%7D%3C/style%3E%3Cpath class='st0' d='M0 100c35.1 0 76.8-5.8 123.9-22.2C221.4 43.7 292.1 0 377 0c51.3 0 74.6 22.9 103 22.9V100H0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.service_parent {
+    max-width: 1320px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 20px 10px;
+
+    .service_inner {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+
+        .service_img {
+            width: 100%;
+            height: 330px;
+
+            .inner {
+                width: 100%;
+                height: 100%;
+                background-position: 50%;
+                background-size: cover;
+                cursor: pointer;
+            }
+        }
+
+        .service_text {
+            background-color: currentColor;
+            padding: 16px;
+            padding-top: 12px;
+            position: relative;
+            overflow: hidden;
+
+            &.bg1 {
+                background: green;
+            }
+
+            &.bg2 {
+                background: blue;
+            }
+
+            .service_bg {
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                margin-left: 12px;
+                background-repeat: no-repeat;
+            }
+
+            .service_inner {
+                margin-left: 182px;
+                padding-top: 19px;
+                padding-bottom: 36px;
+
+                h3 {
+                    color: #ffffff;
+                    font-size: 32px;
+                    margin-bottom: 18px;
+                    letter-spacing: 0.04em;
+
+                    a {
+                        color: #ffffff;
+                    }
+                }
+
+                p {
+                    color: #ffffff;
+                    line-height: 25px;
+                    height: 73px;
+                    overflow: hidden;
+                    font-size: 0.94rem;
+                }
+            }
+
+            .service_more {
+                width: 231px;
+                height: 61px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                display: inline-block;
+                background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 219.7 56.7' style='enable-background:new 0 0 219.7 56.7;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23ffffff;%7D%0A%3C/style%3E%3Cpath class='st0' d='M0,56.7h219.7V0.1C134.2-1.5,68.3,22.9,0,56.7z'/%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                color: currentColor;
+                text-align: right;
+                padding-top: 25px;
+                font-weight: bold;
+                border-bottom-right-radius: 20px;
+
+                a {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+
+
+
 @media(max-width: 991px){
     header{
         nav{
@@ -232,5 +471,8 @@ header{
     }
     .nav_mobile{
         display: block;
+    }
+    .service_parent {
+        flex-direction: column;
     }
 }
