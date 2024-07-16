@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+        }
+        form{
+            margin: auto;
+        }
+        .input_group{
+            border: 1px solid #cacaca;
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+        .input_group>input{
+            border: none;
+            width: 100%;
+            height: 30px;
+        }
+        .input_group>input:focus{
+            outline: none;
+        }
+        .input_group.input_email{
+            padding-left: 30px;
+            position: relative;
+        }
+        .input_group.input_email::before{
+            content: "";
+            width: 30px;
+            height: 30px;
+            /* background-color: red; */
+            background-image: url(https://t3.ftcdn.net/jpg/08/56/30/62/240_F_856306224_qp4p23ZrMWcdLn3lndTeLJ1qXMWLDMP0.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 4px;
+        }
+        .radioLabel{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="input_group input_email">
+            <input type="text" value="test@gmail.com" placeholder="請輸入新的電子信箱">
+        </div>
+        <div class="input_group">
+            <input type="text" placeholder="請輸入帳號">
+        </div>
+        <hr>
+        <div>
+            <input id="male" type="radio" name="gender">
+            <label class="radioLabel" for="male">男</label>
+            <input id="female" type="radio" name="gender">
+            <label class="radioLabel" for="female">女</label>
+        </div>
+        <hr>
+        <input type="password">
+        <select name="" id="">
+            <option value="">資訊1</option>
+            <option value="">資訊2</option>
+            <option value="">資訊3</option>
+        </select>
+        <input id="demo" type="checkbox"> <label for="demo">測試</label>
+    </form>
+</body>
+</html>
