@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        .cross{
+            width: 200px;
+            height: 200px;
+            background-color: #FFD52B;
+            cursor: pointer;
+            position: relative;
+            left: 0;
+            opacity: 1;
+            transition: all 1s ease-in;
+        }
+        .cross:hover{
+            left: 50px;
+            opacity: 0;
+        }
+        .line1,.line2{
+            width: 150px;
+            height: 10px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition: transform .3s ease-in;
+        }
+        .line1{
+            transform: translateX(-50%) translateY(-200%); 
+        }
+        .line2 {
+            transform: translateX(-50%) translateY(200%); 
+         }
+         .cross:hover .line1{
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+         }
+         .cross:hover .line2{
+            transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+         }
+    </style>
+</head>
+<body>
+    <div class="cross">
+        <div class="line1"></div>
+        <div class="line2"></div>
+    </div>
+</body>
+</html>
