@@ -17,8 +17,8 @@
             transition: all 1s ease-in;
         }
         .cross:hover{
-            left: 50px;
-            opacity: 0;
+            /* left: 50px;
+            opacity: 0; */
         }
         .line1,.line2{
             width: 150px;
@@ -27,7 +27,7 @@
             position: absolute;
             left: 50%;
             top: 50%;
-            transition: transform .3s ease-in;
+            transition: transform .3s cubic-bezier(0.06, 1.21, 0.86, 0.01);
         }
         .line1{
             transform: translateX(-50%) translateY(-200%); 
