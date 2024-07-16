@@ -52,6 +52,10 @@
 - 設計稿連結：https://xd.adobe.com/view/99e4de95-0faa-4f24-8f3f-a38b91113f5e-ccb7/?fullscreen
 - 若你想偷看成品，也是沒問題的：https://www.flno1.com.tw/
 
+### 作業練習6
+- 練習排功學社下方的表單
+- 使用 background-attachment: fixed; 做出視差效果
+
 ## 我的html基本教學
 ### [連結](https://www.youtube.com/watch?v=ozvqtDI4RRE&list=PLq18pMPPU8e0q-m1p1uGHlH_nMs5Zyunu)
 
