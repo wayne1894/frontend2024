@@ -1,0 +1,13 @@
+@import '_variables'; //引入全域變數
+//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap'); //引入google font
+
+
+@import 'demo.scss'; //引入demo.scss
+
+body{
+    color:  var(--primary);
+}
+
+// body{
+//     background-image: url(../img/demo.png);
+// }

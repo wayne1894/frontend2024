@@ -1,0 +1,25 @@
+{
+  "name": "vite5_tailwind3_scss_ejs_template",
+  "description": "vite5 + tailwind3 + scss + ejs + deploy firebase hosting",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "rimraf dist && vite build",
+    "preview": "vite preview",
+    "deploy": "rimraf dist && vite build && firebase deploy --only hosting"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "dotenv": "^16.3.2",
+    "glob": "^10.3.10",
+    "rimraf": "^5.0.7",
+    "sass": "^1.69.6",
+    "vite": "^5.0.10",
+    "vite-plugin-ejs": "^1.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6"
+  }
+}
