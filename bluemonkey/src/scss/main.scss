@@ -1,10 +1,39 @@
 @import '_variables'; //引入全域變數
-//@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap'); //引入google font
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'AbelRegular';
+    src: url('../fonts/abel-regular-webfont.eot');
+    src: url('../fonts/abel-regular-webfont.eot?#iefix') format('embedded-opentype'),  url('../fonts/abel-regular-webfont.woff') format('woff'),  url('../fonts/abel-regular-webfont.ttf') format('truetype'),  url('../fonts/abel-regular-webfont.svg#AbelRegular') format('svg');
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
 #menu:checked + nav{
     display: block;
+}
+.font_demo{
+    font-family: "AbelRegular", sans-serif;
+}
+.font_demo2{
+    font-family: "Microsoft JhengHei", sans-serif;
+}
+.font_demo3{
+    font-family: serif;
+}
+.font_demo4{
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
 }
