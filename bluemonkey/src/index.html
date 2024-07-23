@@ -56,29 +56,30 @@
       </div>
     </section>
     <section class="bg-[--primary]">
-      <div class="max-w-[--max-width] mx-auto">
-        
-        <div class="overflow-hidden rounded-2xl">
-          <div class="bg-[#ffde25] text-black text-[18px] py-2">美甲美妝業</div>
-          <div style="aspect-ratio: 16 / 9;" class="relative">
-            <a class="w-full h-full block" href="#">
-              <img class="w-full h-full object-cover"
-                src="https://ik.imagekit.io/thecodingpro/mike-school/tr:w-800,c-at_max/o/web%2F1698985575.aaaaaa?alt=media&token=e33f7a07-2d5e-49dc-b6af-eedc3e9a3952"
-                alt="">
-            </a>
-            <a href="#" class="bg-[red] text-white absolute top-0 left-0">募資優惠</a>
-          </div>
-          <div class="bg-white p-5">
-            <a href="#">no15class.com</a>
-            <p>與藍猴平台的溝通非常順暢，使用前清楚講解說明，使用後遇到問題快速協助，後台操作直觀容易理解，也持續擴增新功能，值得推薦!!</p>
-            <div class="flex items-center gap-3">
-              <img class="w-[40px] rounded-full" src="img/thead12.png" alt="">
-              <span>十五號藝術事業</span>
+      <div class="max-w-[--max-width] mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <%for(var i=0;i<6;i++){%>
+            <div class="overflow-hidden rounded-2xl">
+              <div class="bg-[#ffde25] text-black text-[18px] py-2">美甲美妝業</div>
+              <div style="aspect-ratio: 16 / 9;" class="relative">
+                <a class="w-full h-full block" href="#">
+                  <img class="w-full h-full object-cover"
+                    src="https://ik.imagekit.io/thecodingpro/mike-school/tr:w-800,c-at_max/o/web%2F1698985575.aaaaaa?alt=media&token=e33f7a07-2d5e-49dc-b6af-eedc3e9a3952"
+                    alt="">
+                </a>
+                <a href="#" class="bg-[red] text-white absolute top-0 left-0">募資優惠</a>
+              </div>
+              <div class="bg-white p-5">
+                <a href="#">no15class.com</a>
+                <p>與藍猴平台的溝通非常順暢，使用前清楚講解說明，使用後遇到問題快速協助，後台操作直觀容易理解，也持續擴增新功能，值得推薦!!</p>
+                <div class="flex items-center gap-3">
+                  <img class="w-[40px] rounded-full" src="img/thead12.png" alt="">
+                  <span>十五號藝術事業</span>
+                </div>
+              </div>
             </div>
-          </div>
+          <%}%>
         </div>
-
-
       </div>
     </section>
   </main>
