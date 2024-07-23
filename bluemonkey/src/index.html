@@ -6,24 +6,81 @@
   <title>Document</title>
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="scss/main.scss">
+  <style>
+    .test{
+      max-width: 980px;
+      margin: 0 atuo;
+      border-radius: 50%;
+      letter-spacing: 4px;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: absolute;
+      z-index: 10;
+      cursor: pointer;
+    }
+  </style>
+
 </head>
 <body>
-  <header class="flex items-center bg-[#f6f8fd] h-[70px] px-[60px]">
+  <header class="flex items-center bg-[#f6f8fd] h-[70px] px-[20px] lg:px-[60px]">
     <a class="flex items-center mr-[110px] gap-2" href="#">
       <img class="h-[32px]" src="img/logo-teaching.png" alt="">
       <span>線上開課工具!</span>
     </a>
-    <nav>
-      <ul class="flex gap-[20px]">
-        <li><a href="#">線上開課工具</a></li>
-        <li><a href="#">功能特色</a></li>
-        <li><a href="#">方案費用</a></li>
-        <li><a href="#">客戶案例</a></li>
-        <li><a href="#">關於我們</a></li>
-        <li><a href="#">藍猴首頁</a></li>
+    <input class="hidden" id="menu" type="checkbox">
+    <nav class="hidden lg:block absolute lg:static z-10 top-[70px] left-0 w-full lg:w-auto bg-[#f6f8fd]">
+      <ul class="flex flex-col lg:flex-row gap-[20px] text-center">
+        <li><a class="block py-[10px]" href="#">線上開課工具</a></li>
+        <li><a class="block py-[10px]" href="#">功能特色</a></li>
+        <li><a class="block py-[10px]" href="#">方案費用</a></li>
+        <li><a class="block py-[10px]" href="#">客戶案例</a></li>
+        <li><a class="block py-[10px]" href="#">關於我們</a></li>
+        <li><a class="block py-[10px]" href="#">藍猴首頁</a></li>
       </ul>
     </nav>
-    <a class="ml-auto border-[2px] border-[#f7b157] px-5 py-2 rounded-full font-bold tracking-[3px] hover:bg-[linear-gradient(135deg,#f6d365,#fda085)]" href="#">FREE! 開通試用</a>
+    <label class="absolute right-[22px] block lg:hidden cursor-pointer before:content-[''] before:absolute before:top-[-10px] before:right-[-10px] before:bottom-[-10px] before:left-[-10px]" for="menu">
+      <img src="img/icon_bars.svg" alt="">
+    </label>
+    <a class="hidden lg:block ml-auto border-[2px] border-[#f7b157] px-5 py-2 rounded-full font-bold tracking-[3px] hover:bg-[linear-gradient(135deg,#f6d365,#fda085)]" href="#">FREE! 開通試用</a>
   </header>
+  <main>
+    <section class="bg-[--primary]">
+      <div class="max-w-[--max-width] mx-auto text-center">
+        <img src="img/bg1.png" alt="">
+        <a class="bg-[--secondary] px-[96px] py-[10px] rounded-full border-[4px] border-white font-bold tracking-[8px] relative inline-block mb-4" href="#">查看方案
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 absolute right-[8px] top-1/2 mt-[-10px]">
+            <path fill-rule="evenodd" d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <section class="bg-[--primary]">
+      <div class="max-w-[--max-width] mx-auto">
+        
+        <div class="overflow-hidden rounded-2xl">
+          <div class="bg-[#ffde25] text-black text-[18px] py-2">美甲美妝業</div>
+          <div style="aspect-ratio: 16 / 9;" class="relative">
+            <a class="w-full h-full block" href="#">
+              <img class="w-full h-full object-cover"
+                src="https://ik.imagekit.io/thecodingpro/mike-school/tr:w-800,c-at_max/o/web%2F1698985575.aaaaaa?alt=media&token=e33f7a07-2d5e-49dc-b6af-eedc3e9a3952"
+                alt="">
+            </a>
+            <a href="#" class="bg-[red] text-white absolute top-0 left-0">募資優惠</a>
+          </div>
+          <div class="bg-white p-5">
+            <a href="#">no15class.com</a>
+            <p>與藍猴平台的溝通非常順暢，使用前清楚講解說明，使用後遇到問題快速協助，後台操作直觀容易理解，也持續擴增新功能，值得推薦!!</p>
+            <div class="flex items-center gap-3">
+              <img class="w-[40px] rounded-full" src="img/thead12.png" alt="">
+              <span>十五號藝術事業</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+  </main>
 </body>
 </html>
