@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 海龜程式練習</title>
+</head>
+<body>
+    <script type="text/javascript" src="https://unpkg.com/real-turtle"></script>
+    <canvas id="real-turtle"></canvas>
+    <script type="text/javascript" src="https://unpkg.com/real-turtle/build/helpers/simple.js"></script>
+    
+    <script>
+        turtle.setSpeed(0.99);
+
+        let window_width = window.innerWidth; //視窗的寬度
+        let window_height = window.innerHeight; //視窗的高度
+        var gap = 10;
+        var row_number = 10; //一行要畫幾個
+        var start_width = 20; 
+        var start_height = 20;
+
+        var square_width = parseInt((window_width - (row_number * (gap-1)) - (start_width * 2) ) / row_number); //要算出正方形的寬度
+
+        var column_number =  parseInt((window_height - start_height) / (square_width + gap)); //要計算出，垂直的正方形要畫幾個
+
+        //  turtle.setPosition(start_width, start_height);
+        turtle.setStrokeColorRGB(255, 255, 255);//畫白色的線
+
+        for(let j=0;j<column_number;j++){
+             var _column = start_height + ((square_width + gap) * j);
+            //console.log(_column,"_column")
+            turtle.setPosition(start_width, _column);
+            for(let i=0;i<row_number;i++){
+                 turtle.setPosition( start_width + (square_width + gap) * i, _column)
+                 print_square(turtle); //真正畫的動作在這裡
+            }
+        }
+
+        function print_square(turtle){
+            turtle.setFillStyle(getRandomColor())
+            turtle
+            .beginPath()
+            .right(90)
+            .fd(square_width)
+            .right(90)
+            .fd(square_width)
+            .right(90)
+            .fd(square_width)
+            .right(90)
+            .fd(square_width)
+            .fill()
+            return turtle
+        }
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+    </script>
+</body>
+</html>

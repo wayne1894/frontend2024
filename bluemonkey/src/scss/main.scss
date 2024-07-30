@@ -37,3 +37,84 @@ body{
     font-weight: 900;
     font-style: normal;
 }
+
+._animate-btn-click{
+    animation : btn-click 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+._animate-hover-shine:hover{
+    animation: hover-shine 1.5s cubic-bezier(0,0.58,1,0.44) infinite;
+}
+
+
+@keyframes hover-shine{
+    0%{
+        background: #52b14c;
+        color: white;
+    }
+    25%{
+        background: #ffdd3d;
+        color: white;
+    }
+    50%{
+        background: #f8b158;
+        color: white;
+    }
+    75%{
+        background: #f15b3a;
+        color: white;
+    }
+    100%{
+        background: #25b2ee;
+        color: white;
+    }
+}
+
+@keyframes btn-click{
+    10%{
+        transform: rotate(8deg);
+    }
+    20%{
+        transform: rotate(-4deg);
+    }
+    30%{
+        transform: rotate(2.5deg);
+    }
+    40%{
+        transform: rotate(-2.5deg);
+    }
+    50%,100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+.zoom{
+    overflow: hidden;
+     .inner{
+       position:relative;
+       img,&.bg{
+         transition: transform .42s cubic-bezier(0.15, 0.46, 0.57, 1);
+       }
+       &::before {
+         content: "";
+         transition: opacity .42s cubic-bezier(0.15, 0.46, 0.57, 1);
+         opacity: 0;
+         height: 100%;
+         width: 100%;
+         position: absolute;
+         top: 0;
+         left: 0;
+         z-index: 1;
+         background-color: rgba(255,255,255,0.25);
+       }
+     }
+     &:hover .inner{
+       img,&.bg{
+          transform: scale(1.08, 1.08);
+       }
+       &::before{
+         opacity: 1;
+       }
+     }
+ }
+

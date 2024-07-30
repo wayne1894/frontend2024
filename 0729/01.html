@@ -11,16 +11,35 @@
     <script type="text/javascript" src="https://unpkg.com/real-turtle/build/helpers/simple.js"></script>
     
     <script>
-        turtle.setSpeed(0.99);
+       turtle.setSpeed(0.99);
 
-        var length = 0;
-        var angle = 85;
+       for(var i=0;i<100;i++){
+         if( i%2 == 0){
+            turtle.setStrokeColorRGB(255, 0, 0); //設定紅色(餘數等於0)
+         }else{
+            turtle.setStrokeColorRGB(0, 0, 0); //設定黑色 (餘數等於1)
+         }
+            turtle
+            .arc(15 + (i*10),360,true) // 畫一個半徑為15的圓
+            .right(90)  //向右轉90度
+            .penUp()  //把筆拿開
+            .fd(10) //前進
+            .penDown()  //把筆拿開
+            .left(90) //向左轉90度(轉正)
+       }
 
-        for(let i=0;i<500;i++){
-            turtle.fd(length);
-            turtle.left(angle);
-            length = length + 6;
-        }
+
+
+
+
+        // var length = 0;
+        // var angle = 85;
+
+        // for(let i=0;i<500;i++){
+        //     turtle.fd(length);
+        //     turtle.left(angle);
+        //     length = length + 6;
+        // }
 
         // var length = 10;
         // var angle = 67;
