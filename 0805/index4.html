@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var a = 1;
+        var a = 11;
+        let b = 2;
+        //console.log(a,b)
+
+        function test(a,b){
+            var c = 3;
+            let d = 4;
+            var a = 5;
+            //let b = 6; //我這裡用 let 定義一個 b
+            console.log(a,b);
+            // test2();
+
+        }
+        test2(7,8);
+
+        function test2(){
+           //console.log("test2")
+            test();
+        }
+   
+
+    </script>
+
+</body>
+</html>

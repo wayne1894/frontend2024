@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // console.log(a,"a"); //三種情境
+        // var a = 1;
+
+        //test(1,2); // 有hoisting
+       
+        function test(a,b){
+            console.log(a,b)
+        }
+
+        test2(1,2); //這個沒有 hoisting
+        var test2 = function(a,b){
+            console.log(a,b);
+        }
+        
+    </script>
+</body>
+</html>
