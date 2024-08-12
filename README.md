@@ -25,8 +25,8 @@
 ### [21 Javascript - array](https://docs.google.com/presentation/d/1gSOFJ_hS_FjKfhv6GE71VH__PXlo-VAKSA0m-X6tOYk/edit?usp=sharing)
 ### [22 Javascript - object ](https://docs.google.com/presentation/d/1TiZILDGhvjcjZ2ggBPlvx6y5Ky_cM27bWBb0pTj8V9Y/edit?usp=sharing)
 ### [23 Javascript - 內建物件](https://docs.google.com/presentation/d/1_nYnisdMsaGvcRvr2V261YZhr9oPrie6OK672FGjZpM/edit?usp=sharing)
-### [24 Javascript - DOM](重要)(https://docs.google.com/presentation/d/1GlTgUHvshboVYgrtYOMDqg1MNXcFUIfLLU5XKw1RyPg/edit?usp=sharing)
-### [25 Javascript - 事件](重要)(https://docs.google.com/presentation/d/1pa6c3abIHGUtIJLlfoM4jZghbaHJaddPlPOIg6jn6eA/edit?usp=sharing)
+### [24 Javascript - DOM(重要)](https://docs.google.com/presentation/d/1GlTgUHvshboVYgrtYOMDqg1MNXcFUIfLLU5XKw1RyPg/edit?usp=sharing)
+### [25 Javascript - 事件(重要)](https://docs.google.com/presentation/d/1pa6c3abIHGUtIJLlfoM4jZghbaHJaddPlPOIg6jn6eA/edit?usp=sharing)
 
 
 ### 作業練習1
