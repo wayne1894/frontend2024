@@ -23,6 +23,22 @@
         .bottom button{
             padding: 20px;
         }
+        #airplane{
+            position: relative;
+        }
+        .bullet{
+            width: 5px;
+            height: 10px;
+            background-color: red;
+            position: absolute;
+            top: 36px;
+            left: 40px;
+            transition: all 1s ease-in-out;
+        }
+        .bullet.shot{
+            top: -20px;
+            opacity: 0;
+        }
     </style>
 </head>
 <body>
@@ -137,9 +153,27 @@
          if(event.keyCode == 37) airplane.fly('左');
          if(event.keyCode == 39) airplane.fly('右');
 
-        console.log(event.keyCode,"event.keyCode");
+        //console.log(event.keyCode,"event.keyCode");
         //alert("鍵盤按下")
     })
+    document.addEventListener("click",function(event){
+        airplane.x = event.clientX;
+        airplane.y = event.clientY;
+        airplane.move();
+        //console.log(event,"event")
+    })
+    window.onload = function(){
+        console.log("網頁資源已經完全載入完!")
+    }
+    // document.addEventListener("DOMContentLoaded",fucntion(){
+    //     console.log("網頁dom完全載入完!")
+    // }); 
+    document.addEventListener("DOMContentLoaded",dom_load);
+    function dom_load(){
+        console.log("網頁dom完全載入完!")
+    }
+    
+
     
     function test(a,b){
         alert("我是test")
