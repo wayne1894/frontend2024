@@ -25,6 +25,7 @@
         }
         #airplane{
             position: relative;
+            transition: all .5s ease-in-out;
         }
         .bullet{
             width: 5px;
@@ -91,11 +92,11 @@
     </div>
     <div class="bottom">
         <button id="reset">還原</button>
-        <button id="fly_up" onclick="airplane.fly('上')">上</button>
-        <button onclick="airplane.fly('下')">下</button>
-        <button onclick="airplane.fly('左')">左</button>
-        <button onclick="airplane.fly('右')">右</button>
-        <button>發射</button>
+        <button onclick="airplane.fly(event,'上')">上</button>
+        <button onclick="airplane.fly(event,'下')">下</button>
+        <button onclick="airplane.fly(event,'左')">左</button>
+        <button onclick="airplane.fly(event,'右')">右</button>
+        <button id="shot">發射</button>
     </div>
 <script>
     let airplane = {
@@ -103,11 +104,28 @@
         x: 150,
         y: 100,
         speed : 100,
+        shot : function(){
+            let bullet = document.createElement("div");
+            bullet.className = "bullet"; //加入 class
+            id("airplane").appendChild(bullet);
+            
+            setTimeout(function(){
+                //bullet.className = "bullet shot";
+                bullet.classList.add("shot");
+            },50)
+
+            bullet.addEventListener("transitionend",()=>{
+                if(document.querySelectorAll(".bullet.shot").length){
+                    bullet.parentNode.removeChild(bullet);
+                }
+            })
+        },
         move: function(){
             id("airplane").style.left = this.x + "px";
             id("airplane").style.top = this.y + "px";
         },
-        fly: function(direction){
+        fly: function(event,direction){
+            event.stopPropagation();
             if(direction == "上") this.y = this.y - this.speed;
             if(direction == "下") this.y = this.y + this.speed;
             if(direction == "左") this.x = this.x - this.speed;
@@ -121,10 +139,10 @@
             this.move();
         }
     }
-    id("fly_up").onclick = function(){
-        alert("我是fly_up")
-    }
-    id("fly_up").onclick = null;//我把事件刪除了
+    // id("fly_up").onclick = function(){
+    //     alert("我是fly_up")
+    // }
+    // id("fly_up").onclick = null;//我把事件刪除了
 
     id("reset").addEventListener("click",function(){
         airplane.color = "#ff0000";
@@ -148,10 +166,12 @@
     //     alert("ff")
     // }
     document.addEventListener("keydown",function(event){
-         if(event.keyCode == 38) airplane.fly('上');
-         if(event.keyCode == 40) airplane.fly('下');
-         if(event.keyCode == 37) airplane.fly('左');
-         if(event.keyCode == 39) airplane.fly('右');
+         if(event.keyCode == 38) airplane.fly(event,'上');
+         if(event.keyCode == 40) airplane.fly(event,'下');
+         if(event.keyCode == 37) airplane.fly(event,'左');
+         if(event.keyCode == 39) airplane.fly(event,'右');
+
+         if(event.keyCode == 13) airplane.shot()
 
         //console.log(event.keyCode,"event.keyCode");
         //alert("鍵盤按下")
@@ -172,12 +192,13 @@
     function dom_load(){
         console.log("網頁dom完全載入完!")
     }
-    
 
-    
-    function test(a,b){
-        alert("我是test")
-    }
+    // id("airplane").innerHTML = "<div class='bullet'></div>"
+
+    id("shot").addEventListener("click",function(event){
+       event.stopPropagation();
+       airplane.shot()
+    })
 
     airplane.load();
 
