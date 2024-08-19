@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        <button id="btn"><span id="span">我是按鈕</span></button>
+        <a id="a_link" href="https://wayne1894.com">前往 wayne1894教學網</a>
+    </div>
+    <script>
+    document.body.addEventListener('click', function(event){
+        console.log("body")
+        event.stopPropagation()//停止事件傳播
+    },false);
+    id("div").addEventListener("click",function(event){
+        console.log("div")
+        event.stopPropagation()//停止事件傳播
+        //event.preventDefault();
+    },true)
+    id("btn").addEventListener("click",function(event){
+        console.log("btn")
+    },false)
+    id("a_link").addEventListener("click",function(event){
+        // event.stopPropagation()
+        console.log("a")
+    },false)
+    function id(a){
+      return document.getElementById(a)
+    }
+    </script>
+</body>
+</html>

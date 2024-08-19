@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" action="http://localhost:3000/submit" method="post" onsubmit="return validateForm()">
+        <div>
+            <label for="name">姓名</label>
+            <input id="name" name="name" type="text" size="30" maxlength="50" required>
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input id="email" name="email" type="email" size="30" maxlength="50">
+        </div>
+        <div>
+            最喜觀的食物？
+            <label><input type="checkbox" name="food" value="拉麵">拉麵</label>
+            <label><input type="checkbox" name="food" value="餃子">餃子</label>
+            <label><input type="checkbox" name="food" value="燒肉">燒肉</label>
+        </div>
+        <div>
+            最喜歡的程式？
+            <label><input type="radio" name="program" value="javascript">javascrip</label>
+            <label><input type="radio" name="program" value="python">python</label>
+            <label><input type="radio" name="program" value="asp.net">asp.net</label>
+        </div>
+        <div>
+            <label for="city">最喜歡的國家？</label>
+            <select name="city" id="city">
+                <option value="日本">日本</option>
+                <option value="美國" selected>美國</option>
+                <option value="法國">法國</option>
+            </select>
+        </div>
+
+        <input id="btn" type="submit" value="送出">
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            id("btn").addEventListener("click",()=>{
+                console.log(id("name").value,`id("name").value`);
+
+                var foods = document.getElementsByName("food");
+                for(var i=0;i<foods.length;i++){
+                    if(foods[i].checked) console.log(foods[i].value)
+                }
+
+
+                console.log(document.querySelector('input[name="program"]:checked').value) ;//使用 all 會有 loop
+
+            }) 
+        })
+        //動態放入值
+        document.addEventListener("DOMContentLoaded",()=>{
+            setRadioChecked("python");
+            setCheckboxChecked(["拉麵","餃子"])
+        })
+
+        document.addEventListener("DOMContentLoaded",()=>{
+            console.log(id("city").value)
+            var opts = id("city").options;
+           
+        })
+
+        id("form").addEventListener("submit", (event)=> {
+            event.preventDefault(); // 阻止表單的默認提交行為
+
+            document.getElementById("email").focus();
+             return
+            form.submit();
+        })
+
+        function validateForm(){
+            return false
+        }
+
+        function setRadioChecked(value){
+           //document.querySelector(`input[value="${value}"]`).checked = true;
+           for(var i=0;i<document.getElementsByName("program").length;i++){
+             var elems = document.getElementsByName("program")[i]
+             if(elems.value === value){
+                elems.checked = true;
+                break;//不用在執行了
+             }
+           }
+        }
+        function setCheckboxChecked(list){
+            //console.log(list.indexOf("餃子"))
+            for(var i=0;i<document.getElementsByName("food").length;i++){
+                var elems = document.getElementsByName("food")[i];
+                if(list.indexOf(elems.value) > -1) elems.checked = true;
+            }
+        }
+
+        function id(a){
+            return document.getElementById(a)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="scss/main.scss">
+</head>
+<body>
+  <header class="flex items-center bg-[#f6f8fd] h-[70px] px-[20px] lg:px-[60px]">
+    <a class="flex items-center mr-[110px] gap-2" href="#">
+      <img class="h-[32px]" src="img/logo-teaching.png" alt="">
+      <span class="_animate-hover-shine font_demo4 text-[green]">線上開課工具!</span>
+    </a>
+    <input class="hidden" id="menu" type="checkbox">
+    <nav class="hidden lg:block absolute lg:static z-10 top-[70px] left-0 w-full lg:w-auto bg-[#f6f8fd]">
+      <ul class="flex flex-col lg:flex-row gap-[20px] text-center">
+        <li><a class="block py-[10px]" href="#">線上開課工具</a></li>
+        <li><a class="block py-[10px]" href="#">功能特色</a></li>
+        <li><a class="block py-[10px]" href="#">方案費用</a></li>
+        <li><a class="block py-[10px]" href="#">客戶案例</a></li>
+        <li><a class="block py-[10px]" href="#">關於我們</a></li>
+        <li><a class="block py-[10px]" href="#">藍猴首頁</a></li>
+      </ul>
+    </nav>
+    <label class="absolute right-[22px] block lg:hidden cursor-pointer before:content-[''] before:absolute before:top-[-10px] before:right-[-10px] before:bottom-[-10px] before:left-[-10px]" for="menu">
+      <img src="img/icon_bars.svg" alt="">
+    </label>
+    <a class="hidden lg:block ml-auto border-[2px] border-[#f7b157] px-5 py-2 rounded-full font-bold tracking-[3px] hover:bg-[linear-gradient(135deg,#f6d365,#fda085)]" href="#">FREE! 開通試用</a>
+  </header>
+  <main>
+    <section class="bg-[--primary]">
+      <div class="max-w-[--max-width] mx-auto text-center">
+        <img src="img/bg1.png" alt="">
+        <a class="_animate-btn-click bg-[--secondary] px-[96px] py-[10px] rounded-full border-[4px] border-white font-bold tracking-[8px] relative inline-block mb-4" href="#">查看方案
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 absolute right-[8px] top-1/2 mt-[-10px]">
+            <path fill-rule="evenodd" d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <section class="bg-[--primary]">
+      <div class="max-w-[--max-width] mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <%for(var i=0;i<6;i++){%>
+            <div class="overflow-hidden rounded-2xl">
+              <div class="bg-[#ffde25] text-black text-[18px] py-2">美甲美妝業</div>
+              <div style="aspect-ratio: 16 / 9;" class="relative zoom">
+                <a class="inner w-full h-full block" href="#">
+                  <img class="w-full h-full object-cover"
+                    src="https://ik.imagekit.io/thecodingpro/mike-school/tr:w-800,c-at_max/o/web%2F1698985575.aaaaaa?alt=media&token=e33f7a07-2d5e-49dc-b6af-eedc3e9a3952"
+                    alt="">
+                </a>
+                <a href="#" class="bg-[red] text-white absolute top-0 left-0">募資優惠</a>
+              </div>
+              <div class="bg-white p-5">
+                <a href="#">no15class.com</a>
+                <p>與藍猴平台的溝通非常順暢，使用前清楚講解說明，使用後遇到問題快速協助，後台操作直觀容易理解，也持續擴增新功能，值得推薦!!</p>
+                <div class="flex items-center gap-3">
+                  <img class="w-[40px] rounded-full" src="img/thead12.png" alt="">
+                  <span>十五號藝術事業</span>
+                </div>
+              </div>
+            </div>
+          <%}%>
+        </div>
+      </div>
+    </section>
+    <div role="tablist" class="tabs tabs-lifted">
+      <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 1" />
+      <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+        Tab content 1
+      </div>
+    
+      <input
+        type="radio"
+        name="my_tabs_2"
+        role="tab"
+        class="tab"
+        aria-label="Tab 2"
+        checked="checked" />
+      <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+        Tab content 2
+      </div>
+    
+      <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Tab 3" />
+      <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">
+        Tab content 3
+      </div>
+    </div>
+    
+    <label class="input input-bordered flex items-center gap-2">
+      <input type="text" class="grow" placeholder="Search" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        class="h-4 w-4 opacity-70">
+        <path
+          fill-rule="evenodd"
+          d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+          clip-rule="evenodd" />
+      </svg>
+    </label>
+    <label class="input input-bordered flex items-center gap-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        class="h-4 w-4 opacity-70">
+        <path
+          d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+        <path
+          d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+      </svg>
+      <input type="text" class="grow" placeholder="Email" />
+    </label>
+    <label class="input input-bordered flex items-center gap-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        class="h-4 w-4 opacity-70">
+        <path
+          d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+      </svg>
+      <input type="text" class="grow" placeholder="Username" />
+    </label>
+    <label class="input input-bordered flex items-center gap-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        class="h-4 w-4 opacity-70">
+        <path
+          fill-rule="evenodd"
+          d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
+          clip-rule="evenodd" />
+      </svg>
+      <input type="password" class="grow" value="password" />
+    </label>
+
+    <section class="bg-[#f6f8fd]">
+      <div class="mx-auto max-w-[1000px] text-center py-[20px] px-[15px] lg:px[20px]">
+          <div class="shadow-md bg-white px-[20px] py-[30px]">
+              <form action="">
+                  <div class="flex flex-col lg:flex-row">
+                      <div class="basis-3/5">
+                          <div class="flex flex-col gap-5">
+                              <div class="relative">
+                                  <div class="
+                                  w-[20px] h-[20px]
+                                  absolute
+                                  top-[12px]
+                                  left-[2px]
+                                  bg-[url('../img/favicon.ico')]
+                                  bg-cover
+                                  bg-no-repeat
+                                  bg-center
+                                  "></div>
+                                  <input class="border border-black
+                                  px-[20px] py-[10px]
+                                  w-full
+                                  bg-[#f6f8fd]
+                                  focus:outline-none
+                                  focus:border-[--primary]
+                                  focus:shadow-[0_0_0_1.5px_var(--primary)]
+                                  focus:bg-white
+                                  " type="text" placeholder="*email" required>
+                              </div>
+                              <div class="flex">
+                                  <div>我想了解： <label></label></div>
+                                  <div class="input_chose">
+                                      <input class="hidden" id="chose1" value="網頁設計師" type="radio" name="chose">
+                                      <label class="px-[13px] py-[10px] rounded-[30px] cursor-pointer hover:bg-[#f5f8fc]"
+                                          for="chose1">
+                                          網頁設計師</label>
+                                  </div>
+                                  <div class="input_chose">
+                                      <input class="hidden" id="chose2" name="chose" value="前端工程師" type="radio">
+                                      <label class="px-[13px] py-[10px] rounded-[30px] cursor-pointer hover:bg-[#f5f8fc]"
+                                          for="chose2">
+                                          前端工程師</label>
+                                  </div>
+                              </div>
+                              <textarea class="border border-black
+                              px-[20px] py-[10px]
+                              w-full
+                              bg-[#f6f8fd]
+                              focus:outline-none
+                              focus:border-[--primary]
+                              focus:shadow-[0_0_0_1.5px_var(--primary)]
+                              focus:bg-white
+                              " cols="30" rows="5" placeholder="請輸入問題"></textarea>
+                          </div>
+                      </div>
+                      <div class="basis-2/5 flex justify-center items-end">
+                          <input
+                              class="bg-[#0693e3] cursor-pointer text-white rounded-full w-full lg:w-[300px] h-[50px] mt-3"
+                              type="submit" value="送出">
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+   </section>
+
+  </main>
+
+  
+</body>
+</html>

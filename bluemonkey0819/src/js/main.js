@@ -1,0 +1,1 @@
+console.log("這是javascript 程式檔案")
