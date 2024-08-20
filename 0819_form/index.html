@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .err{
+            color: red;
+            margin-left: 50px;
+            display: none;
+        }
+        .err.open{
+            display: block;
+        }
+        /* input[name="program"]{
+          display: none;
+        } */
+    </style>
+</head>
+<body>
+   <form id="form" method="post" action="http://localhost:3000/submit">
+    <!-- onsubmit="return submitForm()" -->
+      <div>
+         <label for="name">姓名：</label>
+         <input id="name" name="name" size="30" maxlength="30" type="text" value="wayne" required>
+         <div class="err">你的名字太短了</div>
+      </div>
+      <div>
+        <label for="email">email：</label>
+        <input id="email" name="email" size="30" maxlength="50" type="email" placeholder="請輸入email" required>
+      </div>
+      <div>
+        最喜歡的食物？
+        <label><input id="test1" type="checkbox" name="food" value="拉麵">拉麵</label>
+        <label><input type="checkbox" name="food" value="水餃">水餃</label>
+        <label><input type="checkbox" name="food" value="燒肉">燒肉</label>
+      </div>
+      <div>
+        最喜歡的程式語言？
+        <label><input type="radio" name="program" value="javascript">javascript</label>
+        <label><input type="radio" name="program" value="python">python</label>
+        <label><input type="radio" name="program" value="java">java</label>
+      </div>
+      <div>
+        <label for="city">最喜歡的國家</label>
+        <select name="city" id="city">
+          <option value="">請選擇國家</option>
+          <option value="日本" selected>日本</option>
+          <option value="法國">法國</option>
+          <option value="美國">美國</option>
+        </select>
+      </div>
+      <input type="submit" value="送出">
+      <button id="btn" type="button">測試</button>
+      <button id="btn2" type="button">測試2</button>
+      <button id="btn3" type="button">測試3</button>
+   </form>
+   <script>
+      document.addEventListener("DOMContentLoaded",()=>{
+        //alert(id("name").value)
+        //id("name").value = "我是 wayne (寫入)";
+
+        id("form").addEventListener("submit",(event)=>{
+            document.querySelector(".err").classList.remove("open");
+            event.preventDefault();
+            if(id("name").value.length<3){
+                document.querySelector(".err").classList.add("open")
+                return
+            }
+            id("form").submit();
+            //alert("我submit")
+        })
+      })
+
+      document.addEventListener("DOMContentLoaded",()=>{
+        id("btn").addEventListener("click",()=>{
+          var foods = document.getElementsByName("food");
+          for(var i=0;i<foods.length;i++){
+            //if(foods[i].checked) console.log(foods[i].value);
+            foods[i].checked = true
+          }
+        })
+      })
+      
+      document.addEventListener("DOMContentLoaded",()=>{
+        id("btn2").addEventListener("click",()=>{
+          // var program = document.querySelector("input[name='program']:checked").value;
+          // console.log(program,"program");
+          var program = document.querySelectorAll("input[name='program']");
+          console.log(program,"program");
+          program[1].checked = true;
+        })
+      })
+
+      document.addEventListener("DOMContentLoaded",()=>{
+        id("btn3").addEventListener("click",()=>{
+          //console.log(id("city").value)
+          console.log(id("city").options);
+          id("city").options[2].selected = true;
+        })
+      })
+
+      function submitForm(){
+        if(id("name").value.length<3){
+            alert("你的名字太短了");
+            return false;
+        }
+       return true;
+      }
+
+      function id(a){
+        return document.getElementById(a);
+      }
+
+   </script>
+</body>
+</html>

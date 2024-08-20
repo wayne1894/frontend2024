@@ -35,6 +35,13 @@
                 <option value="法國">法國</option>
             </select>
         </div>
+        <div>
+            <label for="file">
+                <input id="file" type="file" accept="image/*">
+            </label>
+            <img id="img" src="" alt="">
+        </div>
+
 
         <input id="btn" type="submit" value="送出">
     </form>
@@ -63,6 +70,19 @@
             console.log(id("city").value)
             var opts = id("city").options;
            
+        })
+        document.addEventListener("DOMContentLoaded",()=>{
+            id("file").addEventListener("change",(e)=>{
+                var input = e.target.files[0]; // 取得選擇的檔案
+    
+                var reader = new FileReader();
+                reader.addEventListener("load", ()=> {
+                    id("img").src = reader.result
+                    console.log(reader.result); // 輸出圖片的 base64 資料 URI
+                });
+
+                reader.readAsDataURL(input); // 讀取圖片檔案內容
+            })
         })
 
         id("form").addEventListener("submit", (event)=> {
