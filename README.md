@@ -28,7 +28,7 @@
 ### [24 Javascript - DOM(重要)](https://docs.google.com/presentation/d/1GlTgUHvshboVYgrtYOMDqg1MNXcFUIfLLU5XKw1RyPg/edit?usp=sharing)
 ### [25 Javascript - 事件(重要)](https://docs.google.com/presentation/d/1pa6c3abIHGUtIJLlfoM4jZghbaHJaddPlPOIg6jn6eA/edit?usp=sharing)
 ### [26 Javascript - form 表單](https://docs.google.com/presentation/d/1lBHoZoMIVVp5T6V75mYPrzN4Ni-c6aXsuafPOF4g4g8/edit?usp=sharing)
-### [26 網頁上線後執行流程 - seo與行銷](https://docs.google.com/presentation/d/1ipGeKMt-c4qonCq50Rfu5LxWKDWHpUH73_6zbNX6LWc/edit?usp=sharing)
+### [27 網頁上線後執行流程 - seo與行銷](https://docs.google.com/presentation/d/1ipGeKMt-c4qonCq50Rfu5LxWKDWHpUH73_6zbNX6LWc/edit?usp=sharing)
 
 
 
