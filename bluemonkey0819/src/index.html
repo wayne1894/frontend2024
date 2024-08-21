@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>我是課程練習</title>
+  <meta name="description" content="我是課程練習我是課程練習">
+
+  <meta property="og:title" content="我是課程練習">
+  <meta property="og:description" content="我是課程練習我是課程練習">
+  <meta property="og:image" content="https://wayne1894-6b560.web.app/bg1.png">
+  <meta property="og:url" content="https://wayne1894-6b560.web.app">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="bluemonkey">
+  <meta property="og:locale" content="zh-Hant-TW">
+
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="scss/main.scss">
 </head>
@@ -144,7 +154,7 @@
     <section class="bg-[#f6f8fd]">
       <div class="mx-auto max-w-[1000px] text-center py-[20px] px-[15px] lg:px[20px]">
           <div class="shadow-md bg-white px-[20px] py-[30px]">
-              <form action="">
+              <form id="bootstrapForm" action="https://docs.google.com/forms/d/e/1FAIpQLSe5GVuMxaAizJBOaUQofZeeU2JjGLF4sajmOlmZiBd1AlR2rg/formResponse">
                   <div class="flex flex-col lg:flex-row">
                       <div class="basis-3/5">
                           <div class="flex flex-col gap-5">
@@ -159,7 +169,7 @@
                                   bg-no-repeat
                                   bg-center
                                   "></div>
-                                  <input class="border border-black
+                                  <input name="entry.2090966942" class="border border-black
                                   px-[20px] py-[10px]
                                   w-full
                                   bg-[#f6f8fd]
@@ -172,19 +182,25 @@
                               <div class="flex">
                                   <div>我想了解： <label></label></div>
                                   <div class="input_chose">
-                                      <input class="hidden" id="chose1" value="網頁設計師" type="radio" name="chose">
+                                      <input class="hidden" id="chose1" value="網頁設計師" type="radio" name="entry.817345762">
                                       <label class="px-[13px] py-[10px] rounded-[30px] cursor-pointer hover:bg-[#f5f8fc]"
                                           for="chose1">
                                           網頁設計師</label>
                                   </div>
                                   <div class="input_chose">
-                                      <input class="hidden" id="chose2" name="chose" value="前端工程師" type="radio">
+                                      <input class="hidden" id="chose2" name="entry.817345762" value="前端工程師" type="radio">
                                       <label class="px-[13px] py-[10px] rounded-[30px] cursor-pointer hover:bg-[#f5f8fc]"
                                           for="chose2">
                                           前端工程師</label>
                                   </div>
+                                  <div class="input_chose">
+                                    <input class="hidden" id="chose3" name="entry.817345762" value="選項 3" type="radio">
+                                    <label class="px-[13px] py-[10px] rounded-[30px] cursor-pointer hover:bg-[#f5f8fc]"
+                                        for="chose3">
+                                        選項 3</label>
+                                  </div>
                               </div>
-                              <textarea class="border border-black
+                              <textarea name="entry.1471327162" class="border border-black
                               px-[20px] py-[10px]
                               w-full
                               bg-[#f6f8fd]
@@ -201,13 +217,33 @@
                               type="submit" value="送出">
                       </div>
                   </div>
+                  <input type="hidden" name="fvv" value="1">
+                  <input type="hidden" name="fbzx" value="-4468399042376915039">
+                  <input type="hidden" name="pageHistory" value="0">
               </form>
           </div>
       </div>
    </section>
 
   </main>
-
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+<script>
+  $('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    })
+})
+</script>
 </body>
 </html>
