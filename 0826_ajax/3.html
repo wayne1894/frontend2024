@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" method="post" action="http://localhost:3000/form">
+        <label>姓名：<input type="text" id="UserName" name="UserName"></label>
+        <label>內容：<textarea id="Content" name="Content"></textarea></label>
+        <input type="submit" value="送出表單">
+    </form>
+    
+   <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.13.0/qs.min.js"></script>
+
+   <script>
+     document.getElementById("form").addEventListener("submit",function(event){
+        event.preventDefault(); //防止表單送出
+        // axios.get("http://localhost:3000/?id=111&id2=444").then((res)=>{
+        //     console.log(res.data,"res.data")
+        // })
+
+        // 這是用 application/json 送資料
+        // let data = {
+        //     UserName:  "wayne",
+        //     Content: "testest"
+        // }
+        // axios.post("http://localhost:3000/form",data,{
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        // }).then((res)=>{
+        //     console.log(res.data,"res.data")
+        // })
+
+
+        // 收集表單資料
+        // const formData = new FormData(this);
+        // // 將 FormData 轉換為 URL 編碼的字串
+        // const data = new URLSearchParams();
+        // formData.forEach((value, key) => {
+        //     console.log(key, value,"key, value")
+        //     data.append(key, value);
+        // });
+        // data.append("demo1","fffffffffffff");
+
+        //用Qs 組出 form data 
+        const data = Qs.stringify({
+            UserName: document.getElementById("UserName").value,
+            Content: document.getElementById("Content").value
+        })
+
+        axios.post("http://localhost:3000/form",data,{
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        }).then((res)=>{
+            console.log(res.data,"res.data")
+        })
+
+
+
+     })
+   </script>
+
+</body>
+</html>

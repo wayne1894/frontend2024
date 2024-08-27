@@ -24,10 +24,20 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
     let a = req.query;
     console.log(a,"a");
-    res.status(500).json({
+    res.status(200).json({
         test2: [1,2,3]
     });
+    res.end()
 });
+
+app.post("/form",(req,res)=>{
+    console.log(req.body,"req.body");
+    console.log(req.get('Content-Type'));
+    res.status(200).json({
+        result : "success"
+    })
+    res.end()
+})
 
 // 啟動伺服器
 app.listen(port, () => {
