@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric.js 圖片添加示例</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #canvas-container {
+            width: 100%;
+            height: auto;
+        }
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+						background-color: beige
+        }
+        #imageContainer img {
+            width: 30%;
+            height: auto;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div id="imageContainer">
+        <img src="img/spec-img1.png" alt="Image 1">
+        <img src="img/spec-img2.png" alt="Image 2">
+        <img src="img/spec-img3.png" alt="Image 3">
+        <img src="img/spec-img4.png" alt="Image 4">
+        <img src="img/spec-img5.png" alt="Image 5">
+        <img src="img/spec-img6.png" alt="Image 6">
+    </div>
+
+    <script>
+			var canvas = new fabric.Canvas('canvas', {
+					isDrawingMode: false
+			});
+
+			function resizeCanvas() {
+					var width = document.body.clientWidth;
+					canvas.setWidth(width);
+					canvas.setHeight(width);
+					canvas.renderAll();
+			}
+
+			// 初始化 canvas 大小
+			resizeCanvas();
+
+			// 監聽視窗大小改變事件
+			window.addEventListener('resize', resizeCanvas);
+
+			document.querySelectorAll('#imageContainer img').forEach(function(img) {
+					img.addEventListener('click', function() {
+							var rect = this.getBoundingClientRect();
+							fabric.Image.fromURL(this.src, function(oImg) {
+									oImg.scaleToWidth(rect.width);
+									oImg.scaleToHeight(rect.height);
+									oImg.set({
+											left: Math.random() * (canvas.width - rect.width),
+											top: Math.random() * (canvas.height - rect.height)
+									});
+
+									canvas.add(oImg);
+							});
+					});
+			});
+
+			// 添加雙擊（double tap）檢測
+			var lastTap = 0;
+			canvas.on('mouse:down', function(options) {
+            var currentTime = new Date().getTime();
+            var tapLength = currentTime - lastTap;
+            if (tapLength < 300 && tapLength > 0) {
+                var target = options.target;
+                if (target) {
+                    canvas.remove(target);
+                    canvas.renderAll();
+                }
+            }
+            lastTap = currentTime;
+			});
+    </script>
+</body>
+</html>

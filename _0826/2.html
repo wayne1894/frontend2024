@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" action="http://localhost:3000/form" method="post">
+        　姓名：<input type="text" name="UserName"><br>
+        　內容：<textarea name="Content"></textarea><br>
+        　<input type="submit" value="送出表單">
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.13.0/qs.min.js"></script>
+    <script>
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // 防止表單默認提交
+
+    // 收集表單資料
+    //const formData = new FormData(this);
+    // 將 FormData 轉換為 URL 編碼的字串
+    // const data = new URLSearchParams();
+    // formData.forEach((value, key) => {
+    //   console.log(key, value,"key, value")
+    //   data.append(key, value);
+    // });
+
+    //用Qs 組出 form data (誰說沒有槍就桶不死)
+    // const data = Qs.stringify({
+    //     UserName: 'value1',
+    //     Content: 'aaaa2'
+    // })
+
+    const data = {
+        UserName: 'value1333',
+        Content: 'aaaa233'
+    }
+
+    // 使用 axios 發送 POST 請求
+    axios.post('http://localhost:3000/form', data, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      console.log('Form submitted successfully:', response.data);
+    })
+    .catch(error => {
+      console.error('There was an error submitting the form:', error);
+    });
+
+})
+    </script>
+</body>
+</html>

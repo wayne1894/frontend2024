@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            let api = "https://datacenter.taichung.gov.tw/Swagger/OpenData/44ff471a-8bda-429d-b5ba-29eace7b05ed?limit=5"
+            // const xhr = new XMLHttpRequest();
+            // xhr.open('GET', api, true);
+            // xhr.onreadystatechange = function() {
+            // if (xhr.readyState === 4 && xhr.status === 200) {
+            //     console.log(JSON.parse(xhr.responseText));
+            // }
+            // };
+            // xhr.send();
+
+            // axios.get(api)
+            // .then(response => {
+            //     console.log(response.data);
+            // })
+            // .catch(error => {
+            //     console.error(error);
+            // });
+
+            fetch(api)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            });
+
+
+        })
+
+
+    </script>
+</body>
+</html>

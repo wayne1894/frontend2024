@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabric.js 圖片添加示例</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #canvas-container {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: beige;
+        }
+        #imageContainer img {
+            width: 30%;
+            height: auto;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .deleteBtn {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            cursor: pointer;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div id="imageContainer">
+        <img src="img/spec-img1.png" alt="Image 1">
+        <img src="img/spec-img2.png" alt="Image 2">
+        <img src="img/spec-img3.png" alt="Image 3">
+        <img src="img/spec-img4.png" alt="Image 4">
+        <img src="img/spec-img5.png" alt="Image 5">
+        <img src="img/spec-img6.png" alt="Image 6">
+    </div>
+    <script>
+
+        var canvas = new fabric.Canvas('canvas', {
+            isDrawingMode: false,
+        });
+
+        function resizeCanvas() {
+            var width = document.body.clientWidth;
+            canvas.setWidth(width);
+            canvas.setHeight(width);
+            canvas.renderAll();
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        function addDeleteBtn(x, y) {
+            $(".deleteBtn").remove();
+            var btnLeft = x - 10; // 將按鈕向左移動10像素
+            var btnTop = y - 10; // 將按鈕向上移動10像素
+            var deleteBtn = '<img src="/close.png" class="deleteBtn" ' +
+                'style="position:absolute;top:' + btnTop + 'px;left:' + btnLeft + 'px;cursor:pointer;width:20px;height:20px;"/>';
+            $("#canvas-container").append(deleteBtn);
+        }
+
+        canvas.on('object:selected', function(e) {
+            addDeleteBtn(e.target.left, e.target.top);
+        });
+
+        canvas.on('mouse:down', function(e) {
+            if (!canvas.getActiveObject()) {
+                $(".deleteBtn").remove();
+            }
+        });
+
+        canvas.on('object:modified', function(e) {
+            addDeleteBtn(e.target.left, e.target.top);
+        });
+
+        canvas.on('object:moving', function(e) {
+            $(".deleteBtn").remove();
+        });
+
+        $(document).on('click', ".deleteBtn", function() {
+            if (canvas.getActiveObject()) {
+                canvas.remove(canvas.getActiveObject());
+                $(".deleteBtn").remove();
+                canvas.renderAll();
+            }
+        });
+
+        document.querySelectorAll('#imageContainer img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                var rect = this.getBoundingClientRect();
+                fabric.Image.fromURL(this.src, function(oImg) {
+                    oImg.scaleToWidth(rect.width);
+                    oImg.scaleToHeight(rect.height);
+                    
+                    var left = Math.random() * (canvas.width - rect.width);
+                    var top = Math.random() * (canvas.height - rect.height);
+                    
+                    oImg.set({
+                        left: left,
+                        top: top
+                    });
+									
+									// 隱藏所有角落的控制點
+									oImg.setControlVisible('ml', false);
+									oImg.setControlVisible('mb', false);
+									oImg.setControlVisible('mr', false);
+									oImg.setControlVisible('mt', false);
+
+                    canvas.add(oImg);
+                    canvas.setActiveObject(oImg);
+                    addDeleteBtn(left, top);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

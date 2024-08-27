@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let test = { "name": "Alice", "age": 25, "isStudent": false, "courses": ["Mathematics", "Computer Science"], "address": { "street": "123 Main St", "city": "Wonderland", "zipCode": "12345" } }
+    console.log(test,"test")
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/?id=fff&vvv=33', true);
+        xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(JSON.parse(xhr.responseText));
+        }
+        };
+        xhr.send();
+
+    </script>
+</body>
+</html>

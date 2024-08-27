@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互動式圖片編輯器 (Fabric.js)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+    <style>
+        #canvas-container {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .image-selector {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .image-selector img {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="image-selector">
+        <img src="img/spec-img1.png" alt="Image 1">
+        <img src="img/spec-img2.png" alt="Image 2">
+        <img src="img/spec-img3.png" alt="Image 3">
+        <img src="img/spec-img4.png" alt="Image 4">
+        <img src="img/spec-img5.png" alt="Image 5">
+        <img src="img/spec-img6.png" alt="Image 6">
+    </div>
+<script>
+
+
+const images = document.querySelectorAll('.image-selector img');
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        fabric.Image.fromURL(img.src, (oImg) => {
+            // 縮放圖片到 canvas 的 1/3 大小
+            const scale = Math.min(
+                (canvas.width / 3) / oImg.width,
+                (canvas.height / 3) / oImg.height
+            );
+            oImg.scale(scale);
+
+            // 設置圖片位置到 canvas 中心
+            oImg.set({
+                left: canvas.width / 2,
+                top: canvas.height / 2,
+                originX: 'center',
+                originY: 'center'
+            });
+
+            // 添加雙擊刪除功能
+            oImg.on('mousedown', function(e) {
+                if (e.button === 1) {  // 中鍵點擊
+                    canvas.remove(oImg);
+                }
+            });
+
+            canvas.add(oImg);
+            canvas.setActiveObject(oImg);
+        });
+    });
+});
+
+	</script>
+</body>
+</html>
