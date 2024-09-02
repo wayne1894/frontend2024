@@ -30,6 +30,10 @@
 ### [26 Javascript - form 表單](https://docs.google.com/presentation/d/1lBHoZoMIVVp5T6V75mYPrzN4Ni-c6aXsuafPOF4g4g8/edit?usp=sharing)
 ### [27 網頁上線後執行流程 - seo與行銷](https://docs.google.com/presentation/d/1ipGeKMt-c4qonCq50Rfu5LxWKDWHpUH73_6zbNX6LWc/edit?usp=sharing)
 ### [28 javascript - ajax(重要)](https://docs.google.com/presentation/d/1TFwFPo4cGR9czrfCwQAfOFdUNEU10Cnp5T06NLJQZiQ/edit?usp=sharing)
+### [29 Javascript - 非同步程式設計(重要)](https://docs.google.com/presentation/d/1W3y5yVp7lZ4aKOPxFKsTtNlR99PuwauMJewZBujwZ9o/edit?usp=sharing)
+### [30 Javascript - 可存取性](https://docs.google.com/presentation/d/1tJ6h3tGcbjn_w4tBB4oiFIJk-5XPbt7HT8hc17ZvHNI/edit?usp=sharing)
+
+
 
 
 
