@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+function ajaxRequest(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+
+    xhr.onload = function() {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        // 請求成功，解析數據並 resolve
+        resolve(xhr.responseText);
+      } else {
+        // 請求失敗，reject
+        reject(new Error(`Request failed with status ${xhr.status}`));
+      }
+    };
+
+    xhr.onerror = function() {
+      // 處理網絡錯誤，reject
+      reject(new Error('Network error'));
+    };
+
+    xhr.send();
+  });
+}
+
+// (async function() {
+//     let res0= await ajaxRequest('http://localhost:3000');
+//     console.log(res0,"res0");
+//     let res1= await ajaxRequest('http://localhost:3000/a1');
+//     console.log(res1,"res1")
+//     let res2= await ajaxRequest('http://localhost:3000/a2');
+//     console.log(res2,"res2")
+//     let res3= await ajaxRequest('http://localhost:3000/a3');
+//     console.log(res3,"res3")
+// })();
+
+(async function() {
+    let a0 = await axios.get("http://localhost:3000")
+    console.log(a0,"data");
+    let a1 = await axios.get("http://localhost:3000/a1")
+    console.log(a1,"data");
+})();
+
+
+   
+    </script>
+</body>
+</html>

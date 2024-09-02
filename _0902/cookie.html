@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sendajax()">sendajax</button>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function sendajax(){
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', "http://localhost:3000/cookie", true);
+            xhr.withCredentials = true;
+            xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(JSON.parse(xhr.responseText));
+            }
+            };
+            xhr.send();
+
+        }
+        function setCookie(name, value) {
+            document.cookie = name + "=" + value + ";";
+        }
+        // 設置 cookie，有效期為 7 天
+        function setCookieTime(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 7天的毫秒數
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        // 範例：設置名稱為 "username"，值為 "JohnDoe"，7天後過期的 cookie
+        document.addEventListener("DOMContentLoaded",()=>{
+            setCookieTime("username", "JohnDoe", 7);
+            setCookieTime("username2", "JohnDoe2", 7);
+            setCookie("username3", "{a:1,b:2}");
+        })
+
+        // 取得 cookie 的值
+        function getCookie(name) {
+            const cookieName = name + "=";
+            const decodedCookie = decodeURIComponent(document.cookie); // 解碼 cookie
+            const cookieArray = decodedCookie.split(';'); // 以分號分割 cookie 字串
+            for (let i = 0; i < cookieArray.length; i++) {
+                let cookie = cookieArray[i].trim(); // 去掉字串開頭的空白
+                if (cookie.indexOf(cookieName) === 0) {
+                    return cookie.substring(cookieName.length, cookie.length); // 回傳對應的 cookie 值
+                }
+            }
+            return ""; // 若未找到對應 cookie 則回傳空字串
+        }
+        document.addEventListener("DOMContentLoaded",()=>{
+            const username3 = getCookie("username3");
+            console.log(username3); // 如果找到，會顯示 "JohnDoe"
+        })
+
+
+        // 刪除 cookie
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        // 範例：刪除名稱為 "username" 的 cookie
+        document.addEventListener("DOMContentLoaded",()=>{
+            deleteCookie("username");
+        })
+
+        
+        
+
+    </script>
+</body>
+</html>
