@@ -60,7 +60,9 @@
                                     </div>
                                 </div>
                                 <div id="sendList">
-                                    <div class="type_column">
+                                    
+                                    loading...
+                                    <!-- <div class="type_column">
                                         <div class="opt_1">
                                             <div>研發測試</div>
                                             <div class="type_number">AB0000794582</div>
@@ -78,7 +80,7 @@
                                             <div class="un_tick"></div>
                                         </div>
                                         <a class="c-delete"><i class="tickDel"></i></a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -97,9 +99,16 @@
         //4、實作互動性，前端動態新增資料、刪除資料
         //5、將結果送回後端 (後端接收 json 資料)
 
-       var custom = [];
+        var custom = [];
+
+        const sleep = ms => {
+            return new Promise(resolve => {
+                setTimeout(resolve, ms);
+            });
+        }
 
         document.addEventListener("DOMContentLoaded",async ()=>{
+            //await sleep(1000);
             await load_data();
             update_list();
         })

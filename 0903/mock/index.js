@@ -4,6 +4,12 @@ const port = 3000;
 
 const cors = require('cors');
 
+const sleep = ms => {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -15,7 +21,8 @@ app.get('/', (req, res) => {
     console.log(a,"a")
     res.json({a:1});
 });
-app.get('/load', (req, res) => {
+app.get('/load', async (req, res) => {
+    await sleep(2000);
     res.json([
         {
             "custNo": "CUS0000794582",
