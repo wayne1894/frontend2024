@@ -113,8 +113,12 @@
             update_list();
         })
         async function load_data(){
-            let response = await axios.get("http://localhost:3000/load")
-            custom = response.data;
+            // let response = await axios.get("http://localhost:3000/load")
+            // custom = response.data;
+
+            let response = await fetch("http://localhost:3000/load");
+            const data = await response.json();// 解析回應的 JSON 資料
+            custom = data;
         }
 
         function update_list(){
