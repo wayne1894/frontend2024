@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="msgSend">
+        <div class="main">
+            <form name="msgSendForm" id="msgSendForm" method="post">
+                    <div id="direct_parent" class="item">
+                        <div class="itemLeft">&nbsp;</div>
+                        <div class="itemRight">
+                            <div class="itemColumn">
+                                <div class="dirLeft">
+                                    <div class="textarea">
+                                        <input type="text" placeholder="請輸入姓名" />
+                                    </div>
+                                    <div class="textarea" style="margin-top:10px;">
+                                        <input type="text" placeholder="請輸入會員編號" />
+                                    </div>
+                                    <div class="textarea" style="margin-top:10px;">
+                                      <select>
+                                        <option value="CUSTOM">CUSTOM</option>
+                                        <option value="SMS">簡訊</option>
+                                        <option value="APP">APP</option>
+                                        <option value="LINE">LINE</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="dirRight">
+                                    <div id="buttonAdd" class="buttonAdd">增加</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="type_parent" class="item">
+                        <div class="itemLeft">發送方式</div>
+                        <div class="itemRight">
+                            <div class="type_column_wrap">
+                                <div class="type_column first-row">
+                                    <div class="opt_1 sign">
+                                        <span class="name">姓名</span>
+                                        <span class="option">選項</span>
+                                    </div>
+                                    <div class="opt_2">
+                                        <span class="relative">自訂</span>
+                                    </div>
+                                    <div class="opt_3">
+                                        <span class="relative"><i></i>簡訊</span>
+                                    </div>
+                                    <div class="opt_4">
+                                        <span class="relative">APP</span>
+                                    </div>
+                                    <div class="opt_5">
+                                        <span class="relative">LINE</span>
+                                    </div>
+                                </div>
+                                <div id="sendList">
+                                    <div class="type_column">
+                                        <div class="opt_1">
+                                            <div>研發測試</div>
+                                            <div class="type_number">AB0000794582</div>
+                                        </div>
+                                        <div class="opt_2">
+                                            <div class="tick"></div>
+                                        </div>
+                                        <div class="opt_3">
+                                            <div class="tick"></div>
+                                        </div>
+                                        <div class="opt_4">
+                                            <div class="tick"></div>
+                                        </div>
+                                        <div class="opt_5">
+                                            <div class="un_tick"></div>
+                                        </div>
+                                        <a class="c-delete"><i class="tickDel"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <button type="button" class="grayBtn w-90">更新</button>
+                    <button type="button" id="submitBtn" class="greenBtn w-90">儲存</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        //1、確定 json 資料格式，並用直接用變數套用前端的介面
+        //2、實作 mock server、cors、並使用 ajax 請求載入json 資料 (可以練習用 fetch)
+        //3、實作更新資料
+        //4、實作互動性，前端動態新增資料、刪除資料
+        //5、將結果送回後端 (後端接收 json 資料)
+
+       var custom = [
+            {
+                "custNo": "CUS0000794582",
+                "notifyType": ["SMS", "APP"],
+                "nameChn": "研發"
+            },
+            {
+                "custNo": "CUS0000794444",
+                "notifyType": ["CUSTOM"],
+                "nameChn": "測試"
+            },
+        ];
+        document.addEventListener("DOMContentLoaded",()=>{
+
+        })
+
+        function update_list(){
+           for(var i=0;i<custom.length;i++){
+              var _list = `
+                    <div id="sendList">
+                        <div class="type_column">
+                            <div class="opt_1">
+                                <div>研發測試</div>
+                                <div class="type_number">AB0000794582</div>
+                            </div>
+                            <div class="opt_2">
+                                <div class="tick"></div>
+                            </div>
+                            <div class="opt_3">
+                                <div class="tick"></div>
+                            </div>
+                            <div class="opt_4">
+                                <div class="tick"></div>
+                            </div>
+                            <div class="opt_5">
+                                <div class="un_tick"></div>
+                            </div>
+                            <a class="c-delete"><i class="tickDel"></i></a>
+                        </div>
+                    </div>
+                `;
+           }
+        }
+
+    </script>
+</body>
+</html>
+
+
