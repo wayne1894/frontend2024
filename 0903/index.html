@@ -97,21 +97,16 @@
         //4、實作互動性，前端動態新增資料、刪除資料
         //5、將結果送回後端 (後端接收 json 資料)
 
-       var custom = [
-            {
-                "custNo": "CUS0000794582",
-                "notifyType": ["LINE", "APP"],
-                "nameChn": "陳緯麟"
-            },
-            {
-                "custNo": "CUS0000794444",
-                "notifyType": ["CUSTOM"],
-                "nameChn": "測試"
-            },
-        ];
-        document.addEventListener("DOMContentLoaded",()=>{
+       var custom = [];
+
+        document.addEventListener("DOMContentLoaded",async ()=>{
+            await load_data();
             update_list();
         })
+        async function load_data(){
+            let response = await axios.get("http://localhost:3000/load")
+            custom = response.data;
+        }
 
         function update_list(){
            var _list = "";
