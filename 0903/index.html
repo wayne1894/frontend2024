@@ -100,8 +100,8 @@
        var custom = [
             {
                 "custNo": "CUS0000794582",
-                "notifyType": ["SMS", "APP"],
-                "nameChn": "研發"
+                "notifyType": ["LINE", "APP"],
+                "nameChn": "陳緯麟"
             },
             {
                 "custNo": "CUS0000794444",
@@ -116,23 +116,32 @@
         function update_list(){
            var _list = "";
            for(var i=0;i<custom.length;i++){
+             var opt_2_tick = "un_tick";
+             var opt_3_tick = "un_tick";
+             var opt_4_tick = "un_tick";
+             var opt_5_tick = "un_tick";
+             if(custom[i].notifyType.indexOf("CUSTOM")>-1) opt_2_tick = "tick";
+             if(custom[i].notifyType.indexOf("SMS")>-1) opt_3_tick = "tick";
+             if(custom[i].notifyType.indexOf("APP")>-1) opt_4_tick = "tick";
+             if(custom[i].notifyType.indexOf("LINE")>-1) opt_5_tick = "tick";
+
               _list = _list + `
                     <div class="type_column">
                         <div class="opt_1">
-                            <div>研發測試</div>
-                            <div class="type_number">AB0000794582</div>
+                            <div>${custom[i].nameChn}</div>
+                            <div class="type_number">${custom[i].custNo}</div>
                         </div>
                         <div class="opt_2">
-                            <div class="tick"></div>
+                            <div class="${opt_2_tick}"></div>
                         </div>
                         <div class="opt_3">
-                            <div class="tick"></div>
+                            <div class="${opt_3_tick}"></div>
                         </div>
                         <div class="opt_4">
-                            <div class="tick"></div>
+                            <div class="${opt_4_tick}"></div>
                         </div>
                         <div class="opt_5">
-                            <div class="un_tick"></div>
+                            <div class="${opt_5_tick}"></div>
                         </div>
                         <a class="c-delete"><i class="tickDel"></i></a>
                     </div>
@@ -146,5 +155,3 @@
     </script>
 </body>
 </html>
-
-
