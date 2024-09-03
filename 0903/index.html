@@ -110,37 +110,39 @@
             },
         ];
         document.addEventListener("DOMContentLoaded",()=>{
-
+            update_list();
         })
 
         function update_list(){
+           var _list = "";
            for(var i=0;i<custom.length;i++){
-              var _list = `
-                    <div id="sendList">
-                        <div class="type_column">
-                            <div class="opt_1">
-                                <div>研發測試</div>
-                                <div class="type_number">AB0000794582</div>
-                            </div>
-                            <div class="opt_2">
-                                <div class="tick"></div>
-                            </div>
-                            <div class="opt_3">
-                                <div class="tick"></div>
-                            </div>
-                            <div class="opt_4">
-                                <div class="tick"></div>
-                            </div>
-                            <div class="opt_5">
-                                <div class="un_tick"></div>
-                            </div>
-                            <a class="c-delete"><i class="tickDel"></i></a>
+              _list = _list + `
+                    <div class="type_column">
+                        <div class="opt_1">
+                            <div>研發測試</div>
+                            <div class="type_number">AB0000794582</div>
                         </div>
+                        <div class="opt_2">
+                            <div class="tick"></div>
+                        </div>
+                        <div class="opt_3">
+                            <div class="tick"></div>
+                        </div>
+                        <div class="opt_4">
+                            <div class="tick"></div>
+                        </div>
+                        <div class="opt_5">
+                            <div class="un_tick"></div>
+                        </div>
+                        <a class="c-delete"><i class="tickDel"></i></a>
                     </div>
                 `;
            }
+           id("sendList").innerHTML = _list;
         }
-
+        function id(a){
+            return document.getElementById(a);
+        }
     </script>
 </body>
 </html>
