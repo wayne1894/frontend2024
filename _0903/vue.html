@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="msgSend">
+        <div class="main">
+            <form name="msgSendForm" id="msgSendForm" method="post">
+                    <div id="direct_parent" class="item">
+                        <div class="itemLeft">&nbsp;</div>
+                        <div class="itemRight">
+                            <div class="itemColumn">
+                                <div class="dirLeft">
+                                    <div class="textarea">
+                                        <input v-model="form_list.nameChn" type="text" placeholder="請輸入姓名" />
+                                    </div>
+                                    <div class="textarea" style="margin-top:10px;">
+                                        <input v-model="form_list.custNo" type="text" placeholder="請輸入會員編號" />
+                                    </div>
+                                    <div class="textarea" style="margin-top:10px;">
+                                      <select v-model="form_list.notifyType">
+                                        <option value="">請選擇</option>
+                                        <option value="CUSTOM">CUSTOM</option>
+                                        <option value="SMS">簡訊</option>
+                                        <option value="APP">APP</option>
+                                        <option value="LINE">LINE</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="dirRight">
+                                    <div @click="btn_add" id="buttonAdd" class="buttonAdd">增加</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="type_parent" class="item">
+                        <div class="itemLeft">發送方式</div>
+                        <div class="itemRight">
+                            <div class="type_column_wrap">
+                                <div class="type_column first-row">
+                                    <div class="opt_1 sign">
+                                        <span class="name">姓名</span>
+                                        <span class="option">選項</span>
+                                    </div>
+                                    <div class="opt_2">
+                                        <span class="relative">自訂</span>
+                                    </div>
+                                    <div class="opt_3">
+                                        <span class="relative"><i></i>簡訊</span>
+                                    </div>
+                                    <div class="opt_4">
+                                        <span class="relative">APP</span>
+                                    </div>
+                                    <div class="opt_5">
+                                        <span class="relative">LINE</span>
+                                    </div>
+                                </div>
+                                <div id="sendList">
+                                     <div v-for="(n,index) in list" class="type_column">
+                                        <div class="opt_1">
+                                            <div>{{n.nameChn}}</div>
+                                            <div class="type_number">{{n.custNo}}</div>
+                                        </div>
+                                        <div @click="list_tick('CUSTOM',n)" class="opt_2">
+                                            <div :class="{ 'tick': n.notifyType.indexOf('CUSTOM') > -1, 'un_tick': n.notifyType.indexOf('CUSTOM') <= -1 }"></div>
+                                        </div>
+                                        <div @click="list_tick('SMS',n)" class="opt_3">
+                                            <div :class="{ 'tick': n.notifyType.indexOf('SMS') > -1, 'un_tick': n.notifyType.indexOf('SMS') <= -1 }"></div>
+                                        </div>
+                                        <div @click="list_tick('APP',n)" class="opt_4">
+                                            <div :class="{ 'tick': n.notifyType.indexOf('APP') > -1, 'un_tick': n.notifyType.indexOf('APP') <= -1 }"></div>
+                                        </div>
+                                        <div @click="list_tick('LINE',n)" class="opt_5">
+                                            <div :class="{ 'tick': n.notifyType.indexOf('LINE') > -1, 'un_tick': n.notifyType.indexOf('LINE') <= -1 }"></div>
+                                        </div>
+                                        <a @click="delete_list(index)" class="c-delete"><i class="tickDel"></i></a>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <button type="button" class="grayBtn w-90">更新</button>
+                    <button @click="save_data" type="button" id="submitBtn" class="greenBtn w-90">儲存</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+  		const { createApp } = Vue
+			let default_form_list = {
+					"custNo": "",
+					"notifyType": "",
+					"nameChn": ""
+			}
+			createApp({
+				data() {
+					return {
+						message: 'Hello Vue2!',
+						list: [],
+						form_list : {
+							...JSON.parse(JSON.stringify(default_form_list))
+						}
+					}
+				},
+				mounted(){
+					this.load_data()
+				},
+				computed: {
+
+				},
+				methods: {
+					async save_data(){
+						let response = await axios.post('http://localhost:3000/save',this.list,{
+							headers: {
+								'Content-Type': 'application/json' // 設置 Content-Type 為 application/json
+							}
+						})
+						console.log(response.data,"response.data")
+					},
+					btn_add(){
+						if(!this.form_list.custNo) return alert("請填寫custNo");
+						if(!this.form_list.nameChn) return alert("請填寫姓名");
+
+						let list = JSON.parse(JSON.stringify(this.form_list))
+						list.notifyType = [list.notifyType || ""];
+						this.list.push(list);
+						this.form_list = JSON.parse(JSON.stringify(default_form_list))
+					},
+					list_tick(notifyType,list){
+						 var index = list.notifyType.indexOf(notifyType); // 查找元素的位置
+						 if (index > -1) {
+							 list.notifyType.splice(index, 1);
+							 return
+						 }
+						 list.notifyType.push(notifyType);
+					},
+					delete_list(index){
+						this.list.splice(index, 1);
+					},
+					async load_data(){
+							let response = await fetch("http://localhost:3000/load");
+							const data = await response.json();// 解析回應的 JSON 資料
+							this.list = data;
+							console.log(this.list,"this.list")
+					}
+				}
+				
+			}).mount('#msgSend')
+
+     
+    </script>
+</body>
+</html>
