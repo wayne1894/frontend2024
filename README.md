@@ -32,6 +32,8 @@
 ### [28 javascript - ajax(重要)](https://docs.google.com/presentation/d/1TFwFPo4cGR9czrfCwQAfOFdUNEU10Cnp5T06NLJQZiQ/edit?usp=sharing)
 ### [29 Javascript - 非同步程式設計(重要)](https://docs.google.com/presentation/d/1W3y5yVp7lZ4aKOPxFKsTtNlR99PuwauMJewZBujwZ9o/edit?usp=sharing)
 ### [30 Javascript - 可存取性](https://docs.google.com/presentation/d/1tJ6h3tGcbjn_w4tBB4oiFIJk-5XPbt7HT8hc17ZvHNI/edit?usp=sharing)
+### [31 Javascript - es6 語法](https://docs.google.com/presentation/d/1lF26vpaAMwL61cU2CbuXyLJe-EjKhZDtUP63F_ezVTk/edit?usp=sharing)
+
 
 
 
