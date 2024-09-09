@@ -37,6 +37,13 @@ app.get('/load', async (req, res) => {
     ]);
 });
 
+app.post("/save",(req,res) =>{
+	console.log(req.body,"req.body");
+    res.json({
+       result: "ok"
+    })
+})
+
 // 啟動伺服器
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

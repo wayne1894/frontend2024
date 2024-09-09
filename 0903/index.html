@@ -17,13 +17,13 @@
                             <div class="itemColumn">
                                 <div class="dirLeft">
                                     <div class="textarea">
-                                        <input type="text" placeholder="請輸入姓名" />
+                                        <input id="nameChn" type="text" placeholder="請輸入姓名" />
                                     </div>
                                     <div class="textarea" style="margin-top:10px;">
-                                        <input type="text" placeholder="請輸入會員編號" />
+                                        <input id="custNo" type="text" placeholder="請輸入會員編號" />
                                     </div>
                                     <div class="textarea" style="margin-top:10px;">
-                                      <select>
+                                      <select id="notifyType">
                                         <option value="CUSTOM">CUSTOM</option>
                                         <option value="SMS">簡訊</option>
                                         <option value="APP">APP</option>
@@ -111,6 +111,9 @@
             //await sleep(1000);
             await load_data();
             update_list();
+
+            id("buttonAdd").addEventListener("click",add_list);
+            id("submitBtn").addEventListener("click",save_data);
         })
         async function load_data(){
             // let response = await axios.get("http://localhost:3000/load")
@@ -157,6 +160,28 @@
            }
            id("sendList").innerHTML = _list;
         }
+        
+		async function save_data(){
+            let response = await axios.post('http://localhost:3000/save',custom,{
+                headers: {
+                    'Content-Type': 'application/json' // 設置 Content-Type 為 application/json
+                }
+            })
+            console.log(response.data,"response.data")
+		}
+
+        function add_list(){
+            if(custom.find(item => item.custNo == id("custNo").value)){
+                alert("custNo重覆");
+                return
+            }
+            custom.push({
+                "custNo": id("custNo").value,
+                "notifyType": [id("notifyType").value],
+                "nameChn": id("nameChn").value
+            })
+            update_list();
+        }
         function tick(notifyType,custNo){
             //alert(notifyType + "," + custNo);
             //第一種方式：
@@ -173,7 +198,7 @@
             // }
 
             //第二種方式
-			custom= custom.map( (item) => {
+			custom= custom.map((item) => {
 				if(item.custNo === custNo){
 					var index = item.notifyType.indexOf(notifyType); // 查找元素的位置
 					 if (index > -1) {
