@@ -134,7 +134,7 @@
              if(custom[i].notifyType.indexOf("LINE")>-1) opt_5_tick = "tick";
 
               _list = _list + `
-                    <div class="type_column">
+                    <div id="${custom[i].custNo}" class="type_column">
                         <div class="opt_1">
                             <div>${custom[i].nameChn}</div>
                             <div class="type_number">${custom[i].custNo}</div>
@@ -151,12 +151,34 @@
                         <div class="opt_5">
                             <div class="${opt_5_tick}"></div>
                         </div>
-                        <a class="c-delete"><i class="tickDel"></i></a>
+                        <a onclick="list_delete('${custom[i].custNo}')" class="c-delete"><i class="tickDel"></i></a>
                     </div>
                 `;
            }
            id("sendList").innerHTML = _list;
         }
+
+        function list_delete(custNo){
+            id(custNo).parentNode.removeChild(id(custNo));
+            //需要把 custom 陣列資料的與 custNo 相同的移掉
+            //第一種方式：
+            // for(var i=0;i<custom.length;i++){
+            //     if(custom[i].custNo == custNo){
+            //         //有配對到時，就把該陣列這一個資料移除
+            //         custom.splice(i,1);
+            //     }
+            // }
+
+            //第二種方式：
+            // custom = custom.filter(function(item){
+            //     return item.custNo != custNo
+            // })
+            
+            custom = custom.filter(item => item.custNo != custNo);
+
+
+        }
+
         function id(a){
             return document.getElementById(a);
         }
