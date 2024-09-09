@@ -159,17 +159,32 @@
         }
         function tick(notifyType,custNo){
             //alert(notifyType + "," + custNo);
-            for(var i=0;i<custom.length;i++){
-              if(custom[i].custNo == custNo){
-                //有配對到
-                var index = custom[i].notifyType.indexOf(notifyType);
-                if(index == -1){
-                   custom[i].notifyType.push(notifyType);
-                }else{
-                   custom[i].notifyType = custom[i].notifyType.filter(item =>  item != notifyType);
-                }
-              }
-            }
+            //第一種方式：
+            // for(var i=0;i<custom.length;i++){
+            //   if(custom[i].custNo == custNo){
+            //     //有配對到
+            //     var index = custom[i].notifyType.indexOf(notifyType);
+            //     if(index == -1){
+            //        custom[i].notifyType.push(notifyType);
+            //     }else{
+            //        custom[i].notifyType = custom[i].notifyType.filter(item =>  item != notifyType);
+            //     }
+            //   }
+            // }
+
+            //第二種方式
+			custom= custom.map( (item) => {
+				if(item.custNo === custNo){
+					var index = item.notifyType.indexOf(notifyType); // 查找元素的位置
+					 if (index > -1) {
+						 item.notifyType.splice(index, 1);
+					 }else{
+						 item.notifyType.push(notifyType);
+					 }
+				}
+				return item
+			});
+
             update_list()
         }
         function list_delete(custNo){
