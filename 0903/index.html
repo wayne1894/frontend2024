@@ -140,16 +140,16 @@
                             <div class="type_number">${custom[i].custNo}</div>
                         </div>
                         <div class="opt_2">
-                            <div class="${opt_2_tick}"></div>
+                            <div onclick="tick('CUSTOM','${custom[i].custNo}')" class="${opt_2_tick}"></div>
                         </div>
                         <div class="opt_3">
-                            <div class="${opt_3_tick}"></div>
+                            <div onclick="tick('SMS','${custom[i].custNo}')" class="${opt_3_tick}"></div>
                         </div>
                         <div class="opt_4">
-                            <div class="${opt_4_tick}"></div>
+                            <div onclick="tick('APP','${custom[i].custNo}')" class="${opt_4_tick}"></div>
                         </div>
                         <div class="opt_5">
-                            <div class="${opt_5_tick}"></div>
+                            <div onclick="tick('LINE','${custom[i].custNo}')" class="${opt_5_tick}"></div>
                         </div>
                         <a onclick="list_delete('${custom[i].custNo}')" class="c-delete"><i class="tickDel"></i></a>
                     </div>
@@ -157,7 +157,21 @@
            }
            id("sendList").innerHTML = _list;
         }
-
+        function tick(notifyType,custNo){
+            //alert(notifyType + "," + custNo);
+            for(var i=0;i<custom.length;i++){
+              if(custom[i].custNo == custNo){
+                //有配對到
+                var index = custom[i].notifyType.indexOf(notifyType);
+                if(index == -1){
+                   custom[i].notifyType.push(notifyType);
+                }else{
+                   custom[i].notifyType = custom[i].notifyType.filter(item =>  item != notifyType);
+                }
+              }
+            }
+            update_list()
+        }
         function list_delete(custNo){
             id(custNo).parentNode.removeChild(id(custNo));
             //需要把 custom 陣列資料的與 custNo 相同的移掉
@@ -173,10 +187,7 @@
             // custom = custom.filter(function(item){
             //     return item.custNo != custNo
             // })
-            
             custom = custom.filter(item => item.custNo != custNo);
-
-
         }
 
         function id(a){
