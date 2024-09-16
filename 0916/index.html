@@ -77,7 +77,7 @@
                                         <div class="opt_5">
                                             <div @click="tick('LINE',n.custNo)" :class="n.notifyType.indexOf('LINE') > -1 ? 'tick' : 'un_tick'"></div>
                                         </div>
-                                        <a class="c-delete"><i class="tickDel"></i></a>
+                                        <a @click="list_delete(n.custNo)" class="c-delete"><i class="tickDel"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -120,6 +120,9 @@
                         }
                         return item
                     });   
+                },
+                list_delete(custNo){
+                    this.custom = this.custom.filter(item => item.custNo != custNo);
                 }
             }
         }).mount("#msgSend")
