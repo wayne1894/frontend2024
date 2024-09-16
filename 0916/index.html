@@ -100,7 +100,15 @@
                }
             },
             mounted(){
-                this.load_data()
+                this.load_data();
+
+                //測試localstorage
+                localStorage.setItem('username', 'JohnDoe');
+                const username = localStorage.getItem('username'); 
+                localStorage.clear();
+                console.log(username);
+
+
             },
             methods:{
                 async load_data(){
