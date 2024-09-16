@@ -161,14 +161,14 @@
            id("sendList").innerHTML = _list;
         }
         
-				async function save_data(){
-								let response = await axios.post('http://localhost:3000/save',custom,{
-										headers: {
-												'Content-Type': 'application/json' // 設置 Content-Type 為 application/json
-										}
-								})
-								console.log(response.data,"response.data")
-				}
+        async function save_data(){
+            let response = await axios.post('http://localhost:3000/save',custom,{
+                    headers: {
+                            'Content-Type': 'application/json' // 設置 Content-Type 為 application/json
+                    }
+            })
+            console.log(response.data,"response.data")
+        }
 
         function add_list(){
             if(custom.find(item => item.custNo == id("custNo").value)){
