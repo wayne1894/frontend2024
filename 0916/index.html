@@ -85,7 +85,7 @@
                     </div>
                     <hr>
                     <button type="button" class="grayBtn w-90">更新</button>
-                    <button type="button" id="submitBtn" class="greenBtn w-90">儲存</button>
+                    <button @click="save_data" type="button" id="submitBtn" class="greenBtn w-90">儲存</button>
             </form>
         </div>
     </div>
@@ -137,6 +137,14 @@
                         "notifyType": [id("notifyType").value],
                         "nameChn": id("nameChn").value
                     })
+                },
+                async save_data() {
+                    let response = await axios.post('http://104.199.214.70/save', this.custom, {
+                        headers: {
+                            'Content-Type': 'application/json' // 設置 Content-Type 為 application/json
+                        }
+                    })
+                    console.log(response.data, "response.data")
                 }
             }
         }).mount("#msgSend")
