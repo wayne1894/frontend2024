@@ -66,16 +66,16 @@
                                             <div class="type_number">{{n.custNo}}</div>
                                         </div>
                                         <div class="opt_2">
-                                            <div :class="n.notifyType.indexOf('CUSTOM') > -1 ? 'tick' : 'un_tick'"></div>
+                                            <div @click="tick('CUSTOM',n.custNo)" :class="n.notifyType.indexOf('CUSTOM') > -1 ? 'tick' : 'un_tick'"></div>
                                         </div>
                                         <div class="opt_3">
-                                            <div :class="n.notifyType.indexOf('SMS') > -1 ? 'tick' : 'un_tick'"></div>
+                                            <div @click="tick('SMS',n.custNo)" :class="n.notifyType.indexOf('SMS') > -1 ? 'tick' : 'un_tick'"></div>
                                         </div>
                                         <div class="opt_4">
-                                            <div :class="n.notifyType.indexOf('APP') > -1 ? 'tick' : 'un_tick'"></div>
+                                            <div @click="tick('APP',n.custNo)" :class="n.notifyType.indexOf('APP') > -1 ? 'tick' : 'un_tick'"></div>
                                         </div>
                                         <div class="opt_5">
-                                            <div :class="n.notifyType.indexOf('LINE') > -1 ? 'tick' : 'un_tick'"></div>
+                                            <div @click="tick('LINE',n.custNo)" :class="n.notifyType.indexOf('LINE') > -1 ? 'tick' : 'un_tick'"></div>
                                         </div>
                                         <a class="c-delete"><i class="tickDel"></i></a>
                                     </div>
@@ -107,6 +107,19 @@
                     let response = await fetch("http://104.199.214.70/load");
                     const data = await response.json();// 解析回應的 JSON 資料
                     this.custom = data;
+                },
+                tick(notifyType,custNo){
+                    this.custom = this.custom.map((item) => {
+                        if(item.custNo === custNo){
+                            var index = item.notifyType.indexOf(notifyType); // 查找元素的位置
+                            if (index > -1) {
+                                item.notifyType.splice(index, 1);
+                            }else{
+                                item.notifyType.push(notifyType);
+                            }
+                        }
+                        return item
+                    });   
                 }
             }
         }).mount("#msgSend")
