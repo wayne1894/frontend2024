@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
                                 <div class="dirRight">
-                                    <div id="buttonAdd" class="buttonAdd">增加</div>
+                                    <div @click="add_list" id="buttonAdd" class="buttonAdd">增加</div>
                                 </div>
                             </div>
                         </div>
@@ -123,6 +123,20 @@
                 },
                 list_delete(custNo){
                     this.custom = this.custom.filter(item => item.custNo != custNo);
+                },
+                add_list(){
+                    function id(a){
+                        return document.getElementById(a);
+                    }
+                    if(this.custom.find(item => item.custNo == id("custNo").value)){
+                        alert("custNo重覆");
+                        return
+                    }
+                    this.custom.push({
+                        "custNo": id("custNo").value,
+                        "notifyType": [id("notifyType").value],
+                        "nameChn": id("nameChn").value
+                    })
                 }
             }
         }).mount("#msgSend")
