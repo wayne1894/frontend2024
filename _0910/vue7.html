@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //v-if v-else v-else-if (display:none)
+        //v-show (visibility: hidden)
+        //v-html (要注意有安全性考量)
+       const { createApp } = Vue;
+       const App = {
+        data() {
+            return {
+              title: "wayne"
+            }
+        },
+       }
+       const app = createApp(App);
+       app.mount("#app")
+    </script>
+</body>
+</html>

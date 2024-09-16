@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{title}}
+        <button @click = "title = 'mary'">好嗎？</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+       //事件 v-on
+       //事件 修飾詞 .once .stop .prevent .self .capture .passive
+       //事件傳遞機制
+       //key code
+       //event.target
+
+       //想了解 方法如果不加() 和加 () 的差別
+       const { createApp } = Vue;
+       const App = {
+        data() {
+            return {
+              title: "wayne"
+            }
+        },
+       }
+       const app = createApp(App);
+       app.mount("#app")
+    </script>
+</body>
+</html>

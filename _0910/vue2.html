@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //綁定資料
+        //全域變數取得 vue 的參照
+       const { createApp } = Vue;
+       const App = {
+        template: `This is {{counter}} the app's entranc`,
+        data() {
+            return {
+               counter : 0
+            }
+        },
+        created(){
+            const interval = setInterval(() => {
+                this.counter ++ 
+            }, 1000);
+            setTimeout(()=>{
+                clearInterval(interval)
+            },5000)
+        }
+       }
+       const app = createApp(App);
+       const vm = app.mount("#app"); //用這個方式可取得全域變數的資料 (但不建議)
+    </script>
+</body>
+</html>

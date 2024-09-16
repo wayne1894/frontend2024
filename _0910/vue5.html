@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="n in 5">{{n}}</li>
+        </ul>
+        <ul>
+            <li v-for="(n,index) in number">{{n}} {{index}}</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //v-for
+        //v-for object
+        //v-for key
+       const { createApp } = Vue;
+       const App = {
+        data() {
+            return {
+              number: [11,22,33,44,55]
+            }
+        },
+       }
+       const app = createApp(App);
+       const vm = app.mount("#app")
+    </script>
+</body>
+</html>

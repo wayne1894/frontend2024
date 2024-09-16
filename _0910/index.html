@@ -104,7 +104,7 @@
             },
             methods: {
                 async save_data(){
-                    let response = await axios.post('http://localhost:3000/save',this.custom,{
+                    let response = await axios.post('http://104.199.214.70/save',this.custom,{
                         headers: {
                             'Content-Type': 'application/json' // 設置 Content-Type 為 application/json
                         }
@@ -142,7 +142,7 @@
                     this.custom = this.custom.filter(item => item.custNo != custNo);
                 },
                 async load_data(){
-                    let response = await fetch("http://localhost:3000/load");
+                    let response = await fetch("http://104.199.214.70/load");
                     const data = await response.json();// 解析回應的 JSON 資料
                     this.custom = data;
                 }

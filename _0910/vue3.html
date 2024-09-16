@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        This is {{title}} the app's entranc2
+        <input type="text" v-model="title">
+        <input type="text" v-model.lazy="title">
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //雙向綁定 input 事件
+        //雙向綁定 使用 lazy onchange 事件
+        //number、trim 修飾詞
+       const { createApp } = Vue;
+       const App = {
+        data() {
+            return {
+              title: "wayne"
+            }
+        },
+       }
+       const app = createApp(App);
+       const vm = app.mount("#app");
+    </script>
+</body>
+</html>
