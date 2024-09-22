@@ -9,12 +9,12 @@
     <div id="app">
         This is {{title}} the app's entranc2
         <input type="text" v-model="title">
-        <input type="text" v-model.lazy="title">
+        <input type="text" v-model.lazy.trim="title">
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         //雙向綁定 input 事件
-        //雙向綁定 使用 lazy onchange 事件
+        //雙向綁定 使用 lazy onchange、input 事件
         //number、trim 修飾詞
        const { createApp } = Vue;
        const App = {

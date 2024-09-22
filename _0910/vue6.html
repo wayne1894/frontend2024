@@ -8,12 +8,17 @@
 <body>
     <div id="app">
         {{title}}
-        <button @click = "title = 'mary'">好嗎？</button>
+        {{number}}
+        <button @click= "title = 'mary'">好嗎？</button>
+        <button @click="demo('a')">測試</button>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-       //事件 v-on
-       //事件 修飾詞 .once .stop .prevent .self .capture .passive
+       //事件 v-on:click
+       //事件 修飾詞 .once (.stop .prevent .self .capture .passive)
+			 //了解 javascript 事件 與 vue 事件
+			 //了解 vue.js 執行的函式
+			
        //事件傳遞機制
        //key code
        //event.target
@@ -23,12 +28,20 @@
        const App = {
         data() {
             return {
-              title: "wayne"
+              title: "wayne",
+							number : 0 
             }
         },
+    		methods: {
+					demo(a){
+						console.log(event.target.innerHTML,"event.target")
+						
+						this.number = this.number + 1
+					}
+				}
        }
        const app = createApp(App);
-       app.mount("#app")
+       const vm = app.mount("#app")
     </script>
 </body>
 </html>

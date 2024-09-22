@@ -13,17 +13,21 @@
         <ul>
             <li v-for="(n,index) in number">{{n}} {{index}}</li>
         </ul>
+        <ul><li v-for="n in demo"> {{n.a}}</li></ul>
+        <div>{{demo2.aaa}}</div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         //v-for
-        //v-for object
-        //v-for key
+        //v-for index
+        //v-for 加上 key
        const { createApp } = Vue;
        const App = {
         data() {
             return {
-              number: [11,22,33,44,55]
+              number: [11,22,33,44,55],
+							demo : [{a:1},{a:2},{a:3}],
+							demo2 : {}
             }
         },
        }

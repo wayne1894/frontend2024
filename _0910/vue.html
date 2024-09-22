@@ -6,14 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+    	This is {{title}} the app's entrance
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        //模版語法
+        //模版語法 (綁定資料)
         //可安裝 vue dev 工具
+				//全域變數取得 vue 的參照
        const { createApp } = Vue;
        const App = {
-        template: `This is {{title}} the app's entrance`,
         data() {
             return {
               title: "wayne"

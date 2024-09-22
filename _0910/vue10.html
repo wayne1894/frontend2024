@@ -6,30 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-    	This is {{counter}} the app's entranc
-    </div>
+    <div id="app"></div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-			// 使用 this 取得 demo 的資料並且可以控制
+	   //vue 生命週期
        const { createApp } = Vue;
        const App = {
         data() {
             return {
-               counter : 0
+              title: "wayne"
             }
         },
         created(){
-            const interval = setInterval(() => {
-                this.counter ++ 
-            }, 1000);
-            setTimeout(()=>{
-                clearInterval(interval)
-            },5000)
+            console.log(`the component is now created.`)
+        },
+        mounted() {
+            console.log(`the component is now mounted.`)
         }
        }
        const app = createApp(App);
-       const vm = app.mount("#app"); //用這個方式可取得全域變數的資料 (但不建議)
+       const vm = app.mount("#app")
     </script>
 </body>
 </html>

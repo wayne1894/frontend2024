@@ -7,29 +7,32 @@
 </head>
 <body>
     <div id="app">
-    	This is {{counter}} the app's entranc
+        <div>{{ books.length > 0 ? 'Yes' : 'No' }}</div>
+        <div>
+            {{publishedBooksMessage}}
+        </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-			// 使用 this 取得 demo 的資料並且可以控制
        const { createApp } = Vue;
        const App = {
         data() {
             return {
-               counter : 0
+                books:[
+                    'Vue 2 - Advanced Guide',
+                    'Vue 3 - Basic Guide',
+                    'Vue 4 - The Mystery'
+                ]
             }
         },
-        created(){
-            const interval = setInterval(() => {
-                this.counter ++ 
-            }, 1000);
-            setTimeout(()=>{
-                clearInterval(interval)
-            },5000)
+        computed: {
+            publishedBooksMessage() {
+                return this.books.length > 0 ? 'Yes' : 'No'
+            }
         }
        }
        const app = createApp(App);
-       const vm = app.mount("#app"); //用這個方式可取得全域變數的資料 (但不建議)
+       const vm = app.mount("#app")
     </script>
 </body>
 </html>

@@ -6,22 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-    	<div v-once>{{demo}}</div>
-    	<div v-html="html"></div>
-    </div>
+    <div id="app"></div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        //v-once
-        //v-memo
-			  //v-text="msg"
-        //v-html (要注意有安全性考量)
        const { createApp } = Vue;
        const App = {
         data() {
             return {
-							demo: "demo",
-              html: "<b>fff</b>"
+              title: "wayne"
             }
         },
        }

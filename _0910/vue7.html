@@ -6,22 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+    	<div v-if="open">a</div>
+    	<div v-else>b</div>
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         //v-if v-else v-else-if (display:none)
         //v-show (visibility: hidden)
-        //v-html (要注意有安全性考量)
+
        const { createApp } = Vue;
        const App = {
         data() {
             return {
-              title: "wayne"
+              open: true
             }
         },
        }
        const app = createApp(App);
-       app.mount("#app")
+       const vm = app.mount("#app")
     </script>
 </body>
 </html>
