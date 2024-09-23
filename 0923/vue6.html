@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{title}}
+        <button @click="title = 'mary'">點我一下</button>
+        <button @click = "demo('ddddd')">測試</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //事件 v-on:click ，可以用 @ 代替
+        //vue methods
+        const { createApp } = Vue;
+        const App = {
+            data(){
+                return {
+                    title: "wayne"
+                }
+            },
+            methods:{
+                demo(a){
+                   this.title = a
+                }
+            },
+        }
+        const app = createApp(App);
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>
