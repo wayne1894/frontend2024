@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span>{{title}}</span>
+        <input type="text" v-model="title">
+        <input type="text" v-model.trim="title">
+        <!-- <input type="number" v-model.number="title"> -->
+
+        <input type="text" v-model.lazy="title">
+
+        <!-- <input oninput="oninput()" type="text">
+        <input onchange="onchange()" type="text"> -->
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //雙向綁定 (v-model)
+        //v-model 修飾符 trim、number、lazy
+        //v-model 預設就是 oninput 事件
+        //.lazy 就是 onchange
+
+        const { createApp } = Vue;
+        const App = {
+            data(){
+                return {
+                    title: "wayne"
+                }
+            },
+        }
+        const app = createApp(App);
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>

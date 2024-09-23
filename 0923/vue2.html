@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{counter}}
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //html dom 載入完會執行的 mounted function (像 document.addEventListener("DOMContentLoaded")
+        //vue 可以使用 this 取得 data 裡的資料，並且可以控制
+        const { createApp } = Vue;
+        const App = {
+            data(){
+                return {
+                    title: "wayne",
+                    counter : 0
+                }
+            },
+            mounted(){
+                //console.log(this.title,"this.title")
+                
+                let _counter = (()=>{
+                    setTimeout(()=>{
+                        this.counter ++;
+                        return _counter();
+                    },1000)
+                })
+       
+                _counter()
+
+
+            },
+        }
+        const app = createApp(App);
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>

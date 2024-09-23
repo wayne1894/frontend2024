@@ -26,6 +26,19 @@
             setTimeout(()=>{
                 clearInterval(interval)
             },5000)
+					
+					
+					 let _counter = (()=>{
+							setTimeout(()=>{
+									this.counter ++;
+									return _counter()
+							},1000)
+
+						})
+						_counter()
+					
+					
+					
         }
        }
        const app = createApp(App);
