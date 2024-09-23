@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="n in number">{{n}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item,index) in number">{{index}}、{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="n in demo">{{n.a}}</li>
+        </ul>
+        {{demo2.abcd}}
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //v-for
+        //v-for index
+        const { createApp } = Vue;
+        const App = {
+            data(){
+                return {
+                    number:[111,222,"我是333",444,555],
+                    demo: [{a:1},{a:2},{a:3}],
+                    demo2 : {}
+                }
+            },
+            mounted(){
+                this.demo2.abcd = "我出現了";
+            }
+        }
+        const app = createApp(App);
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>
