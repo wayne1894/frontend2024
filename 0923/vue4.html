@@ -22,6 +22,17 @@
 <body>
     <div id="app">
         <div :class="color">{{title}}</div>
+        <div :class="'blue big'">{{title}}</div>
+        <div :class="style1">{{title}}</div>
+        <div :class="{
+            'yellow' : open,
+            'big' : open
+        }">{{title}}</div>
+
+        <div style="background-color: blue;">{{title}}</div>
+        <div :style="{
+            backgroundColor: style2
+        }">{{title}}</div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
@@ -33,6 +44,9 @@
                 return {
                     title: "wayne",
                     color: "yellow",
+                    style1 : 'blue big',
+                    open : true,
+                    style2 : "#ff0000"
                 }
             },
         }
