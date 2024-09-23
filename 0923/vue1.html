@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            my name is {{title}} .
+            his name is {{title2}}.
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //我們現在是用 Options api 的模式撰寫 (另一種是 Composition)
+        //模版語法：綁定資料
+        //全域變數取得 vue 的參照 (mount指定一個全域變數)
+        const { createApp } = Vue;
+        const App = {
+            data(){
+                return {
+                    title: "wayne",
+                    title2 : "小明"
+                }
+            },
+        }
+        const app = createApp(App);
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>
