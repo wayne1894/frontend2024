@@ -8,16 +8,18 @@
 <body>
     
 <!-- <script src="js/main.js"></script> -->
-<script src="js/function.js"></script>
+<!-- <script src="js/function.js"></script> -->
 <script type="module">
-    // import {sleep,demo} from "./js/es6.js"
+     import {sleep,demo} from "./js/es6.js"
+     import demo2 from "./js/es6_demo.js"
     // demo();
-    // async function load(){
-    //     console.log(1);
-    //     await sleep(3000);
-    //     console.log(2);
-    // }
-    // load();
+    demo2()
+    async function load(){
+        console.log(1);
+        await sleep(3000);
+        console.log(2);
+    }
+    //load();
 
 </script>
 </body>
