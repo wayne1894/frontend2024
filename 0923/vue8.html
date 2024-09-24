@@ -7,25 +7,28 @@
 </head>
 <body>
     <div id="app">
-        {{title}}
-        <button @click="title = 'mary'">點我一下</button>
-        <button @click = "demo('ddddd')">測試</button>
+        <span v-once>{{title}}</span>
+
+        <!-- 下面這兩個是一樣的 -->
+        <span v-text="title"></span>
+        <span>{{title}}</span>
+
+        <div>{{demo}}</div>
+        <div v-html="demo"></div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        //事件 v-on:click ，可以用 @ 代替
-        //vue methods
+        //v-once 只綁定一次
+        //v-text 等同於一般的綁定
+        //v-html 可以渲染 html 元素 (需注意安全性)
+
         const { createApp } = Vue;
         const App = {
             data(){
                 return {
-                    title: "wayne"
+                    title: "wayne",
+                    demo : `<b>我是粗體</b><h1>我是 h1</h1>`
                 }
-            },
-            methods:{
-                demo(a){
-                    this.title = a
-                },
             },
         }
         const app = createApp(App);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div v-if="(demo() == '123')">123</div>
+        {{demo()}}
+        <hr>
+        <div>
+            {{title}}
+            {{title_demo}}
+        </div>
+        <hr>
+        <div>{{final()}}</div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //computed 計算屬性
+        const { createApp } = Vue;
+        const App = {
+            data(){
+                return {
+                    title: "wayne"
+                }
+            },
+            methods:{
+                age(){
+                    return 18
+                },
+                demo(a){
+                    return "my name is " + this.title;
+                },
+                final(){
+                    return "final " + this.title_demo
+                }
+            },
+            computed:{
+                title_demo(){
+                   // return `my name is ${this.title} (computed)`;
+                    return "my name is " + this.title + "(computed)" + this.age();
+                },
+            }
+        }
+        const app = createApp(App);
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>

@@ -7,14 +7,11 @@
 </head>
 <body>
     <div id="app">
-        {{title}}
-        <button @click="title = 'mary'">點我一下</button>
-        <button @click = "demo('ddddd')">測試</button>
+        
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        //事件 v-on:click ，可以用 @ 代替
-        //vue methods
+        //vue 生命週期鉤子
         const { createApp } = Vue;
         const App = {
             data(){
@@ -22,11 +19,12 @@
                     title: "wayne"
                 }
             },
-            methods:{
-                demo(a){
-                    this.title = a
-                },
+            created(){
+                console.log("我是 created")
             },
+            mounted(){
+                console.log("我是 mounted")
+            }
         }
         const app = createApp(App);
         const vm = app.mount("#app");

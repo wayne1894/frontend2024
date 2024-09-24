@@ -7,25 +7,27 @@
 </head>
 <body>
     <div id="app">
-        {{title}}
-        <button @click="title = 'mary'">點我一下</button>
-        <button @click = "demo('ddddd')">測試</button>
+        <div v-show="open">打開</div>
+
+        <div v-if="open">我是 true</div>
+        <div v-else>我是 false</div>
+
+        <div v-if="(demo == 1)">我是1</div>
+        <div v-else-if="(demo == 2)">我是2</div>
+        <div v-else-if="(demo == 3)">我是3</div>
+        <div v-else>我是其他</div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        //事件 v-on:click ，可以用 @ 代替
-        //vue methods
+        //v-if v-else v-else-if (vue會幫你移除元素)
+        //v-show (display:none) 
         const { createApp } = Vue;
         const App = {
             data(){
                 return {
-                    title: "wayne"
+                    open : false,
+                    demo: 5,
                 }
-            },
-            methods:{
-                demo(a){
-                    this.title = a
-                },
             },
         }
         const app = createApp(App);
