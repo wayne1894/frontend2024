@@ -33,6 +33,8 @@
 ### [29 Javascript - 非同步程式設計(重要)](https://docs.google.com/presentation/d/1W3y5yVp7lZ4aKOPxFKsTtNlR99PuwauMJewZBujwZ9o/edit?usp=sharing)
 ### [30 Javascript - 可存取性](https://docs.google.com/presentation/d/1tJ6h3tGcbjn_w4tBB4oiFIJk-5XPbt7HT8hc17ZvHNI/edit?usp=sharing)
 ### [31 Javascript - es6 與進階寫法](https://docs.google.com/presentation/d/1lF26vpaAMwL61cU2CbuXyLJe-EjKhZDtUP63F_ezVTk/edit?usp=sharing)
+### [32 Vue.js - 環境安裝與設定](https://docs.google.com/presentation/d/1WE8lSgUiSX3Y4AJx8RfgF1q_m9JO6iq__qEFPqXtTF0/edit?usp=sharing)
+
 
 
 
