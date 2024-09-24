@@ -100,6 +100,18 @@ header{
 						background-repeat: no-repeat;
 						background-position: center;
         }
+				&.fixed{
+					a{
+						color: #000!important;
+					}
+					a:hover{
+						color: #fff!important;
+					}
+					position: fixed;
+					width: 100%;
+					background-color: #fff;
+					transition: background .3s ease-out;
+				}
     }
     .go_down{
         position: absolute;

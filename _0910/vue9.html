@@ -9,10 +9,16 @@
     <div id="app">
     	<input type="text" ref="messageRef" placeholder="demo">
     	 <div ref="blue">blue</div>
+         <input
+         :value="title"
+         @input="demo">
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-			 //vue 抓到原生的dom ，在使用原生語法加以控制
+		//vue 抓到原生的 dom ，在使用原生語法加以控制
+        //綁元素
+        //表單綁定元素和事件 (v-model) 
+        //事件的 event trget
        const { createApp } = Vue;
        const App = {
         data() {
@@ -20,9 +26,15 @@
               title: "wayne"
             }
         },
-				 mounted(){
-						this.$refs.messageRef.focus();
-				 },
+        mounted(){
+            this.$refs.messageRef.focus();
+        },
+        methods: {
+            demo(){
+                this.title = event.target.value
+                console.log(event.target,"event.target")
+            }
+        }
        }
        const app = createApp(App);
        const vm = app.mount("#app")

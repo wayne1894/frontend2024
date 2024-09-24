@@ -32,13 +32,13 @@
 							number : 0 
             }
         },
-    		methods: {
-					demo(a){
-						console.log(event.target.innerHTML,"event.target")
-						
-						this.number = this.number + 1
-					}
-				}
+        methods: {
+                demo(a){
+                    console.log(event.target.innerHTML,"event.target")
+                    
+                    this.number = this.number + 1
+                }
+            }
        }
        const app = createApp(App);
        const vm = app.mount("#app")

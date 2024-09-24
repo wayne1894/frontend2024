@@ -10,12 +10,16 @@
     />
    	<link rel="stylesheet" href="scss/main.scss">
 </head>
-<body>
-    <header>
-        <nav>
-            <a class="logo" href="#">
+<body >
+    <header id="app" >
+        <nav :class="{ fixed: isFixed }">
+            <a v-if="!isFixed" class="logo" href="#">
                 <img class="pc" src="img/LOGO1.svg" alt="">
                 <img class="mobile" src="img/LOGO2.svg" alt="">
+            </a>
+            <a v-else class="logo" href="#">
+                <img class="pc" src="https://khsmusicweb.blob.core.windows.net/public/src/static/images/LOGO3.svg" alt="">
+                <img class="mobile" src="https://khsmusicweb.blob.core.windows.net/public/src/static/images/LOGO4.svg" alt="">
             </a>
             <ul id="navbarCollapse" class="nav_left navbar-collapse collapse">
                 <li>
@@ -246,6 +250,29 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+	      const { createApp } = Vue;
+        const App = {
+            data(){
+                return {
+                    isFixed: false
+                }
+            },
+					  mounted() {
+							window.addEventListener('scroll', this.handleScroll);
+						},
+					  methods: {
+							handleScroll() {
+								this.isFixed = window.scrollY > 100; // 當滾動超過 100px 時固定 header
+							}
+						}
+        }
+       const app = createApp(App);
+       const vm = app.mount("#app")
+
+		</script>
+    
     
     <!-- Initialize Swiper -->
     <script>

@@ -6,9 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        {{title}}
+
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
+		//watch
        const { createApp } = Vue;
        const App = {
         data() {
@@ -16,6 +20,11 @@
               title: "wayne"
             }
         },
+        watch:{
+            title(newValue, oldValue){
+                console.log(newValue, oldValue,"___")
+            }
+        }
        }
        const app = createApp(App);
        const vm = app.mount("#app")
