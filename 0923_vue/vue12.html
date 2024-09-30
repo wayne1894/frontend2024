@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <a :href="link">超連結</a>
+        <input type="text" ref="messageRef" :placeholder="title">
+
+        <!-- <input type="text" @input="input" :value="title"> -->
+        <input type="text" v-model="title">
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        //vue 綁元素
+        //vue 抓到原生的 dom，在使用原生語法加以控制
+        //事件的 event target
+
+        //v-model = @input + value + 寫回
+        const { createApp } = Vue;
+        const App = {
+            data(){
+                return {
+                    link : "https://www.google.com",
+                    title: "wayne33"
+                }
+            },
+            mounted(){
+                this.$refs.messageRef.focus() ;//原生語法，讓表單有焦點
+                setTimeout(()=>{
+                    this.$refs.messageRef.blur()
+                },3000)
+                console.log(this.$refs.messageRef,"this.$refs.messageRef")
+            },
+            methods:{
+                // input(){
+                //     this.title = event.target.value;
+                //     console.log(event.target.value,"event.target.value")
+                // }
+            }
+        }
+        const app = createApp(App);
+        const vm = app.mount("#app");
+    </script>
+</body>
+</html>
