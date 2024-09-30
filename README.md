@@ -35,7 +35,7 @@
 ### [31 Javascript - es6 與進階寫法](https://docs.google.com/presentation/d/1lF26vpaAMwL61cU2CbuXyLJe-EjKhZDtUP63F_ezVTk/edit?usp=sharing)
 ### [32 Vue.js - 環境安裝與設定](https://docs.google.com/presentation/d/1WE8lSgUiSX3Y4AJx8RfgF1q_m9JO6iq__qEFPqXtTF0/edit?usp=sharing)
 ### [33 Vue.js - 骰子遊戲開發](https://docs.google.com/presentation/d/18H1c8RKsDEbdqZpWsK_RNof7zbtvNg_hiWnu-ih32Bw/edit?usp=sharing)
-### [35 Vue.js - components、route、pinia](https://docs.google.com/presentation/d/1dE5FYZ-Ky2w81Ntap8hXiRLOne4-QR1sSCEzY3HxXsA/edit?usp=sharing)
+### [34 Vue.js - components、route、pinia](https://docs.google.com/presentation/d/1dE5FYZ-Ky2w81Ntap8hXiRLOne4-QR1sSCEzY3HxXsA/edit?usp=sharing)
 
 
 
