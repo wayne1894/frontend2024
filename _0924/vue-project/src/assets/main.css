@@ -1,0 +1,9 @@
+:root {
+    --primary: #F422B9;
+    --secondary: #FCF8F7;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
