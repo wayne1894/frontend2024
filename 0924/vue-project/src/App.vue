@@ -1,8 +1,6 @@
 <template>
-	<Header></Header>
 	<!--  語法實驗區-->
   <div class="text-[--primary]">這是紅色{{demo}}</div>
-
   <RouterView />
 </template>
 
