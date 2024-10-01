@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': 'var(--primary)',
-        'secondary': 'var(--secondary)',
+				'red': 'var(--red)',
+				'green': 'var(--green)'
       },
       screens: {
         'md': '1024px',
