@@ -21,16 +21,16 @@
           >
             <div>
               <p class="text-white text-xs md:text-xl font-bold tracking-wider">
-                SMALL
+                {{playSicbo.small.name}}
               </p>
               <p class="text-[#FFFFFF66] text-xs font-bold">
-                4-10
+                {{ playSicbo.small.betCommand }}
               </p>
             </div>
             <p
               class="text-[#FFFFFF66] text-xs tracking-widest font-bold mt-auto"
             >
-              1:1
+              1:{{playSicbo.small.odds}}
             </p>
           </button>
           <!-- 雙 -->
@@ -39,13 +39,13 @@
           >
             <div>
               <p class="text-white text-xs font-bold tracking-wider">
-                EVEN
+                {{playSicbo.even.betCommand}}
               </p>
             </div>
             <p
               class="text-[#FFFFFF66] text-xs tracking-widest font-bold mt-auto"
             >
-              1:1
+              1:{{playSicbo.even.odds}}
             </p>
           </button>
         </div>
@@ -54,16 +54,17 @@
           class="col-span-1 flex flex-col md:flex-row items-center gap-0.5 md:gap-1"
         >
           <button
+           v-for="item in playSicbo.doubleDice"
             class="col-span-1 sicbo-btn w-full md:w-[60px] h-[48px] md:h-[100px] flex flex-col items-center justify-center relative"
           >
             <div class="flex md:flex-col items-center gap-1">
-              <img src="/dice/one.svg" class="w-3 md:w-6 h-3 md:h-6"  />
-              <img src="/dice/one.svg" class="w-3 md:w-6 h-3 md:h-6"  />
+              <img :src="item.img" class="w-3 md:w-6 h-3 md:h-6"  />
+              <img :src="item.img" class="w-3 md:w-6 h-3 md:h-6"  />
             </div>
             <p
               class="text-[#FFFFFF66] text-xs tracking-widest font-bold mt-auto"
             >
-              1:8
+              1:{{item.odds}}
             </p>
           </button>
         </div>
@@ -218,6 +219,96 @@
 import Header from '../components/Header.vue'
 
 export default{
+  data(){
+    return {
+      playSicbo: {
+					big: {//大小
+						name: "BIG",
+						betCommand: "11-17",
+						odds: 1,
+					},
+					small: {
+						name: "SMALL",
+						betCommand: "4-10",
+						odds: 1,
+					},
+					even: { //單雙
+						betCommand: "EVEN",
+						odds: 1,
+					},
+					odd: {
+						betCommand: "ODD",
+						odds: 1,
+					},
+					doubleDice: [
+						{ id: 1, img: "/dice/one.svg",odds:8},
+						{ id: 2, img: "/dice/two.svg",odds:8},
+						{ id: 3, img: "/dice/three.svg",odds:8},
+						{ id: 4, img: "/dice/four.svg",odds:8},
+						{ id: 5, img: "/dice/five.svg",odds:8},
+						{ id: 6, img: "/dice/six.svg",odds:8}
+					],
+					anyTriple: { //任意豹子
+						betCommand: "Any Triple",
+						odds: 23
+					},
+					specifyTripleDice: [ //指定豹子
+						{ id: 1, img: "/dice/one.svg",odds:150},
+						{ id: 2, img: "/dice/two.svg",odds:150},
+						{ id: 3, img: "/dice/three.svg",odds:150},
+						{ id: 4, img: "/dice/four.svg",odds:150},
+						{ id: 5, img: "/dice/five.svg",odds:150},
+						{ id: 6, img: "/dice/six.svg",odds:150}
+					],
+					specifyPoints: [ //指定點數
+						{ id: 4, odds: 50},
+						{ id: 5, odds: 18},
+						{ id: 6, odds: 14},
+						{ id: 7, odds: 12},
+						{ id: 8, odds: 8},
+						{ id: 9, odds: 6},
+						{ id: 10, odds: 6},
+						{ id: 11, odds: 6},
+						{ id: 12, odds: 6},
+						{ id: 13, odds: 8},
+						{ id: 14, odds: 12},
+						{ id: 15, odds: 14},
+						{ id: 16, odds: 18},
+						{ id: 17, odds: 50}
+					],
+					diceCouple: [
+						{ id: "1,2", couple: "one,two",odds:5},
+						{ id: "1,3", couple: "one,three",odds:5},
+						{ id: "1,4", couple: "one,four",odds:5},
+						{ id: "1,5", couple: "one,five",odds:5},
+						{ id: "1,6", couple: "one,six",odds:5},
+						{ id: "2,3", couple: "two,three",odds:5},
+						{ id: "2,4", couple: "two,four",odds:5},
+						{ id: "2,5", couple: "two,five",odds:5},
+						{ id: "2,6", couple: "two,six",odds:5},
+						{ id: "3,4", couple: "three,four",odds:5},
+						{ id: "3,5", couple: "three,five",odds:5},
+						{ id: "3,6", couple: "three,six",odds:5},
+						{ id: "4,5", couple: "four,five",odds:5},
+						{ id: "4,6", couple: "four,six",odds:5},
+						{ id: "5,6", couple: "five,six",odds:5}
+					],
+					/**骰子玩法賠率 */
+					diceSingleOdds: 1,
+					diceDoubleOdds: 2,
+					diceTirpleOdds: 3,
+					specifyDice: [ //指定出現骰子
+						{ id: 1, img: "/dice/one.svg"},
+						{ id: 2, img: "/dice/two.svg"},
+						{ id: 3, img: "/dice/three.svg"},
+						{ id: 4, img: "/dice/four.svg"},
+						{ id: 5, img: "/dice/five.svg"},
+						{ id: 6, img: "/dice/six.svg"}
+					]
+				}
+
+    }
+  },
   components:{
     Header,
   }
