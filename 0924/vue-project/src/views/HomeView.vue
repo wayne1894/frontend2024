@@ -1,9 +1,17 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
   <main>
-    <TheWelcome />
+    <Header></Header>
+    <hr>
+    這是首頁
   </main>
 </template>
+
+<script>
+import Header from '../components/Header.vue'
+
+export default{
+  components:{
+    Header,
+  }
+}
+</script>
