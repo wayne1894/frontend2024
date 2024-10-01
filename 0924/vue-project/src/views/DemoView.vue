@@ -54,7 +54,12 @@
           class="col-span-1 flex flex-col md:flex-row items-center gap-0.5 md:gap-1"
         >
           <button
-           v-for="item in playSicbo.doubleDice"
+           v-for="item in playSicbo.doubleDice.filter(e => e.id <= 3)"
+           :key = "item.id"
+           :class="{
+              'border-[#FD4D6C] md:border-[#42A978]' : item.id % 2 == 0,
+              'border-[#42A978] md:border-[#FD4D6C]' : item.id % 2 != 0,
+            }"
             class="col-span-1 sicbo-btn w-full md:w-[60px] h-[48px] md:h-[100px] flex flex-col items-center justify-center relative"
           >
             <div class="flex md:flex-col items-center gap-1">
@@ -71,17 +76,23 @@
         <!-- 指定豹子(1-3)手機版 -->
         <div class="col-span-1 flex md:hidden flex-col items-center gap-0.5">
           <button
+            v-for="item in playSicbo.specifyTripleDice.filter(e => e.id <= 3)"
+            :key="item.id"
+            :class="{
+              'border-[#42A978]' : item.id % 2 == 0,
+              'border-[#FD4D6C]' : item.id % 2 != 0,
+            }"
             class="sicbo-btn w-full h-[48px] flex flex-col items-center justify-center relative"
           >
             <div class="flex flex-col justify-center items-center gap-0.5">
-              <img src="/dice/one.svg" class="w-3 h-3"  />
+              <img :src="item.img" class="w-3 h-3"  />
               <div class="flex gap-0.5">
-                <img src="/dice/one.svg" class="w-3 h-3"  />
-								<img src="/dice/one.svg" class="w-3 h-3"  />
+                <img :src="item.img" class="w-3 h-3"  />
+								<img :src="item.img" class="w-3 h-3"  />
               </div>
             </div>
             <p class="text-[#FFFFFF66] text-xs tracking-widest font-bold">
-              1:150
+              1:{{item.odds}}
             </p>
           </button>
         </div>
@@ -94,10 +105,11 @@
           >
             <div>
               <p class="text-white text-xs md:text-xl font-bold tracking-wider">
-                Any Triple
+                {{playSicbo.anyTriple.betCommand}}
               </p>
               <div class="flex justify-center gap-0.5">
                 <div
+                  v-for="n in 3"
                   class="flex flex-col md:flex-row justify-center gap-0.5 md:gap-1 mt-1"
                 >
                   <img class="w-3 md:w-6 h-3 md:h-6" src="/dice/one.svg">
@@ -112,7 +124,7 @@
             <p
               class="text-[#FFFFFF66] text-xs tracking-widest font-bold mt-auto"
             >
-              1:23
+              1:{{playSicbo.anyTriple.odds}}
             </p>
           </div>
         </button>
