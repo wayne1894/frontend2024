@@ -1,0 +1,36 @@
+:root {
+    --primary: #F422B9;
+    --secondary: #FCF8F7;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    background: #000;
+}
+
+.sicbo-btn {
+    @apply border md:border-2 bg-gradient-to-b from-[#202031] to-[#010102] rounded-sm md:rounded-md p-2
+}
+
+.sicbo-btn-full {
+    @apply border md:border-2 bg-gradient-to-b from-[#202031] to-[#010102] rounded-full p-2
+}
+
+/*
+  .sicbo-btn.turn_green{
+    @apply from-[#ff007f] to-[#292326];
+  }
+  .sicbo-btn.turn_green p.tracking-wider{
+      color: #fff!important
+  }
+  .sicbo-btn.turn_red{
+    @apply from-[#ff007f] to-[#292326];
+  }
+  .sicbo-btn.turn_red p.tracking-wider{
+      color: #fff!important
+  }*/
