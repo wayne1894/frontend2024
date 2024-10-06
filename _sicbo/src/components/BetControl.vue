@@ -26,11 +26,10 @@
       </div>
     </div>
     <button
-			@click.stop="openChooseBet"
       class="flex flex-col-reverse md:flex-col items-center w-[84px] md:w-[60px] group/bets relative focus:outline-none"
     >
       <img
-        :src="nowBet.img"
+        src="/bet/50bet.svg"
         class="w-[68px] md:w-[60px] group-hover/bets:scale-105 duration-200"
       />
       <svg
@@ -51,17 +50,13 @@
 
       <!-- 選擇籌碼 -->
       <div
-				v-show="showBetList"
         class=" flex flex-col gap-2 absolute z-30 bottom-[calc(100%+10px)]"
       >
         <button
-          @click.stop="chooseBet(item)"
-          v-for="item in bets"
-          :key="item.id"
           class="flex flex-col-reverse md:flex-col items-center w-[60px] group relative"
         >
           <img
-            :src="item.img"
+            src="/bet/500bet.svg"
             class="hidden w-[50px] md:w-[60px] group-hover:scale-105 duration-200"
           />
         </button>
@@ -75,28 +70,14 @@
 export default {
   data() {
     return {
-			nowBet: {},
-			showBetList: false,
-      bets: [
-        { id: 1, amount: 500, img: "/bet/500bet.svg" },
-        { id: 2, amount: 1000, img: "/bet/1000bet.svg" },
-        { id: 3, amount: 50, img: "/bet/50bet.svg" },
-        { id: 4, amount: 100, img: "/bet/100bet.svg" },
-        { id: 5, amount: 5000, img: "/bet/5000bet.svg" }
-      ]
+
     };
   },
   mounted() {
-    this.nowBet = this.bets[0]
+    
   },
   methods: {
-		openChooseBet(){
-			this.showBetList = !this.showBetList;
-		},
-    chooseBet(item) {
-      this.nowBet = item;
-      this.showBetList = false;
-    },
+    
   },
 	computed:{}
 };
