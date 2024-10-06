@@ -1,7 +1,9 @@
 <template>
   <main>
     <Header></Header>
-    <RouterLink to="sicbo">sicbo</RouterLink>
+    <div class="w-full max-w-[640px] md:max-w-[950px] mx-auto mt-5">
+    	<RouterLink class="text-[#fff]" to="sicbo">sicbo 入口</RouterLink>
+    </div>
   </main>
 </template>
 <script>
@@ -21,13 +23,9 @@ import { useMainStore } from '../stores/index.js'
 		mounted(){
 			this.store.demo = 333
 			console.log(this.store.demo,"this.store.demo")
-			
 		},
 		methods:{
-			someEvent(a){
-				console.log(a,"a")
-				alert(1)
-			}
+			
 		},
 		components: {
 			Header,
