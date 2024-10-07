@@ -1,5 +1,5 @@
 <template>
-<Header></Header>
+
 <div class="pt-[5%]">
   <div class="md:flex md:items-end md:px-[20px] md:justify-center md:gap-5">
   <div
@@ -346,16 +346,12 @@
     </div>
   </div>
 	</div>
-	<div class="fixed w-full bottom-0">
-		<!-- 下注控制 -->
-		<BetControl></BetControl>
-  </div>
+
 </div>
 </template>
   
 <script>
-import Header from '../components/Header.vue'
-import BetControl from '../components/BetControl.vue'
+
 
 export default{
   data(){
@@ -449,8 +445,7 @@ export default{
     }
   },
   components:{
-    Header,
-		BetControl
+
   }
 }
 </script>
