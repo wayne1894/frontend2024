@@ -347,7 +347,7 @@
   </div>
 	</div>
   <div class="fixed w-full bottom-0">
-		<BetControl></BetControl>
+		<BetControl @clearBet="clearBetFn" :total="BetTotal"></BetControl>
   </div>
 </div>
 </template>
@@ -358,6 +358,7 @@ import BetControl from '../components/BetControl.vue'
 export default{
   data(){
     return {
+      BetTotal:5000,
       playSicbo: {
 					big: {//大小
 						name: "BIG",
@@ -444,6 +445,12 @@ export default{
 					]
 				}
 
+    }
+  },
+  methods:{
+    clearBetFn(data){
+      alert(data)
+      //做自己事
     }
   },
   components:{

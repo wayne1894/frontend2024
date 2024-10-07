@@ -9,16 +9,18 @@
         <p class="text-sm md:text-xs">Select Total:</p>
         <p class="text-sm tracking-widest">
           $
-          <span class="ml-2 md:ml-0 font-bold text-2xl">200</span>
+          <span class="ml-2 md:ml-0 font-bold text-2xl">{{total}}</span>
         </p>
       </div>
       <div class="w-full flex items-center gap-1.5">
         <button
+          @click="clearBet"
           class="flex-1 rounded-full py-1 text-white text-xs md:text-base font-bold border border-[#6ECA01] bg-gradient-to-r from-[#70CE01] to-[#19161C] hover:scale-105 duration-200"
         >
           CLEAR
         </button>
         <button
+          @click="returnBet"
           class="flex-1 rounded-full py-1 text-white text-xs md:text-base font-bold border border-[#C72F1C] bg-gradient-to-r from-[#D4311C] to-[#19161C] hover:scale-105 duration-200"
         >
           RETURN
@@ -67,12 +69,21 @@
         </button>
       </div>
     </button>
+
+   <!-- 選擇籌碼背景模糊 -->
+   <div
+      v-show="showBetList || isDrawing"
+      @click="closeChooseBet"
+      class="fixed top-0 left-0 z-20 w-screen h-screen bg-[#1a1a1b99] backdropBlur"
+    ></div>
+
   </div>
 </template>
 
 <script>
 
 export default {
+  props:["total"],
   data() {
     return {
       nowBet:{},
@@ -87,9 +98,20 @@ export default {
     };
   },
   mounted() {
-    this.nowBet = this.bets[0];
+    //this.nowBet = this.bets[0];
+    this.chooseBet(this.bets[0]);
   },
   methods: {
+    clearBet(){
+      //this.$emit("clearBet","test1")
+      this.$emit("clearBet")
+    },
+    returnBet(){
+      this.$emit("returnBet","test2")
+    },
+    closeChooseBet(){
+      this.showBetList = false;
+    },
     chooseBet(item){
       this.nowBet = item;
     },
