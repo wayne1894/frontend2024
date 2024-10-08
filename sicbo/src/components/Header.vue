@@ -26,7 +26,7 @@
           <span class="mr-1 md:mr-2.5">$</span>
           <span>{{ store.totalAmountFormat }}</span>
         </p>
-        <button  class="flex justify-center items-center w-5 h-5">
+        <button @click="updateStatus" class="flex justify-center items-center w-5 h-5">
           <svg
             width="19"
             height="17"
