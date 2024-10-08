@@ -463,7 +463,6 @@ export default{
     },
     handBet(type,dice){
       this.BetTotal = this.BetTotal + this.BetAmount;
-      // this.playSicbo[type].moneyBet = this.playSicbo[type].moneyBet + this.BetAmount;
       if(dice){
         const index = this.playSicbo[type].findIndex(e => e.id == dice);
         this.playSicbo[type][index].moneyBet += this.BetAmount;
