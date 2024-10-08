@@ -24,7 +24,7 @@
       >
         <p class="text-white font-bold text-base md:text-2xl">
           <span class="mr-1 md:mr-2.5">$</span>
-          <span>{{ totalAmountFormat }}</span>
+          <span>{{ store.totalAmount }}</span>
         </p>
         <button  class="flex justify-center items-center w-5 h-5">
           <svg
@@ -49,13 +49,25 @@
   </div>
 </template>
 <script>
+    import { useMainStore } from '../stores/index.js';
 	  import { moneyFormat} from '../assets/js/tool.js';
     export default{
+        setup(){
+          return {
+            store : useMainStore()
+          }
+        },
         data(){
             return {
               countdown : 0,
 							totalAmount: 0
             }
+        },
+        created(){
+
+        },
+        mounted(){
+
         },
 				computed: {
 					totalAmountFormat(){
