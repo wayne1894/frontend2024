@@ -24,7 +24,7 @@
       >
         <p class="text-white font-bold text-base md:text-2xl">
           <span class="mr-1 md:mr-2.5">$</span>
-          <span>{{ store.totalAmount }}</span>
+          <span>{{ store.totalAmountFormat }}</span>
         </p>
         <button  class="flex justify-center items-center w-5 h-5">
           <svg
@@ -64,10 +64,38 @@
             }
         },
         created(){
-
+          // console.log(this.store.totalAmount,"this.store.totalAmount")
+          this.updateStatus()
         },
         mounted(){
 
+        },
+        methods:{
+					async updateStatus() {
+							const fullApiUrl = `${this.store.api}/checkUserStatus`;
+							const requestOptions = {
+								method: "POST",
+								headers: {
+									"Content-Type": "application/json"
+								},
+								body: JSON.stringify({})
+							};
+
+							try {
+								const response = await fetch(fullApiUrl, requestOptions);
+								if (!response.ok) {
+									throw new Error(
+										`Network response was not ok: ${response.statusText}`
+									);
+								}
+								const data = await response.json();
+								if (data.status != 1) throw new Error(`data.status != 0`);
+								//this.totalAmount = data.info.balance
+                this.store.setTotalAmount(data.info.balance)
+							} catch (err) {
+								console.error("发生错误:", err);
+							}
+					}
         },
 				computed: {
 					totalAmountFormat(){
