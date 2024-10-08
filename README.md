@@ -38,8 +38,8 @@
 ### [34 Vue.js - 骰子遊戲開發](https://docs.google.com/presentation/d/18H1c8RKsDEbdqZpWsK_RNof7zbtvNg_hiWnu-ih32Bw/edit?usp=sharing)
 ### [35 骰子遊戲開發 -  header、BetControl](https://docs.google.com/presentation/d/1luFEDAyQRZktksm_DK55pzL8hODCzTOxy3YSesLwXJc/edit?usp=sharing)
 ### [36 骰子遊戲開發 -  套用 api 資料](https://docs.google.com/presentation/d/1Ch_m-10b12vYDfq-A288fLTgvcR98LpZoYmz_-HJJGo/edit?usp=sharing)
-
-
+### [37 骰子遊戲開發 - 下注程式與邏輯](https://docs.google.com/presentation/d/1xaNTxGuWVXT-bxNxpjj4lzCvw0Pjl3YIm-EqhDM4wHM/edit?usp=sharing)
+### [38 骰子遊戲開發 -  倒數計時器](https://docs.google.com/presentation/d/1SfJytVb9djXR2ASBO-yG3YnIKmasgxnNf92RYGMxQg0/edit?usp=sharing)
 
 
 
