@@ -223,10 +223,12 @@
         class="hidden md:flex items-center gap-1 my-1.5"
       >
         <button
+          @click="handBet('specifyTripleDice',item.id)"
           v-for="item in playSicbo.specifyTripleDice"
           :key="item.id"
           class="sicbo-btn border-[#FD4D6C] w-[155px] h-[50px] flex items-center justify-center relative"
         >
+          <Bet :amount="item.moneyBet"></Bet>
           <div class="flex justify-center items-center gap-1">
             <img :src="item.img" class="w-6 h-6"  />
             <img :src="item.img" class="w-6 h-6"  />
@@ -376,7 +378,7 @@ export default{
 						name: "SMALL",
 						betCommand: "4-10",
 						odds: 1,
-            moneyBet:0
+            moneyBet: 0
 					},
 					even: { //單雙
 						betCommand: "EVEN",
@@ -396,15 +398,15 @@ export default{
 					],
 					anyTriple: { //任意豹子
 						betCommand: "Any Triple",
-						odds: 23
+						odds: 23,
 					},
 					specifyTripleDice: [ //指定豹子
-						{ id: 1, img: "/dice/one.svg",odds:150},
-						{ id: 2, img: "/dice/two.svg",odds:150},
-						{ id: 3, img: "/dice/three.svg",odds:150},
-						{ id: 4, img: "/dice/four.svg",odds:150},
-						{ id: 5, img: "/dice/five.svg",odds:150},
-						{ id: 6, img: "/dice/six.svg",odds:150}
+						{ id: 1, img: "/dice/one.svg",odds:150,moneyBet: 0},
+						{ id: 2, img: "/dice/two.svg",odds:150,moneyBet: 0},
+						{ id: 3, img: "/dice/three.svg",odds:150,moneyBet: 0},
+						{ id: 4, img: "/dice/four.svg",odds:150,moneyBet: 0},
+						{ id: 5, img: "/dice/five.svg",odds:150,moneyBet: 0},
+						{ id: 6, img: "/dice/six.svg",odds:150,moneyBet: 0}
 					],
 					specifyPoints: [ //指定點數
 						{ id: 4, odds: 50},
@@ -459,9 +461,15 @@ export default{
     setBetAmount(amount){
       this.BetAmount = amount;
     },
-    handBet(type){
+    handBet(type,dice){
       this.BetTotal = this.BetTotal + this.BetAmount;
-      this.playSicbo[type].moneyBet = this.playSicbo[type].moneyBet + this.BetAmount;
+      // this.playSicbo[type].moneyBet = this.playSicbo[type].moneyBet + this.BetAmount;
+      if(dice){
+        const index = this.playSicbo[type].findIndex(e => e.id == dice);
+        this.playSicbo[type][index].moneyBet += this.BetAmount;
+      }else{
+        this.playSicbo[type].moneyBet += this.BetAmount;
+      }
     },
     clearBetFn(data){
       //做自己事
