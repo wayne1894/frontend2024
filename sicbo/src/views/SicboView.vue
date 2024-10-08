@@ -18,8 +18,10 @@
         >
           <!-- 小 -->
           <button
+            @click="handBet('small')"
             class="sicbo-btn border-[#FD4D6C] w-full md:w-[100px] h-[73px] md:h-[100px] flex flex-col items-center justify-center relative"
           >
+            <Bet :amount = "playSicbo.small.moneyBet"></Bet>
             <div>
               <p class="text-white text-xs md:text-xl font-bold tracking-wider">
                 {{ playSicbo.small.name }}
@@ -347,7 +349,10 @@
   </div>
 	</div>
   <div class="fixed w-full bottom-0">
-		<BetControl @clearBet="clearBetFn" :total="BetTotal"></BetControl>
+		<BetControl 
+      @setBetAmount = "setBetAmount"
+      @clearBet="clearBetFn" 
+      :total="BetTotal"></BetControl>
   </div>
 </div>
 </template>
@@ -355,10 +360,12 @@
 <script>
 import Header from '../components/Header.vue'
 import BetControl from '../components/BetControl.vue'
+import Bet from '../components/Bet.vue'
 export default{
   data(){
     return {
-      BetTotal:5000,
+      BetAmount: 0,
+      BetTotal: 0,
       playSicbo: {
 					big: {//大小
 						name: "BIG",
@@ -369,6 +376,7 @@ export default{
 						name: "SMALL",
 						betCommand: "4-10",
 						odds: 1,
+            moneyBet:0
 					},
 					even: { //單雙
 						betCommand: "EVEN",
@@ -448,14 +456,21 @@ export default{
     }
   },
   methods:{
+    setBetAmount(amount){
+      this.BetAmount = amount;
+    },
+    handBet(type){
+      this.BetTotal = this.BetTotal + this.BetAmount;
+      this.playSicbo[type].moneyBet = this.playSicbo[type].moneyBet + this.BetAmount;
+    },
     clearBetFn(data){
-      alert(data)
       //做自己事
     }
   },
   components:{
     BetControl,
-    Header
+    Header,
+    Bet
   }
 }
 </script>

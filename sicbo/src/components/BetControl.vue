@@ -114,6 +114,7 @@ export default {
     },
     chooseBet(item){
       this.nowBet = item;
+      this.$emit("setBetAmount",item.amount);
     },
     openChooseBet(){
       // if(this.showBetList == false) return this.showBetList = true;
