@@ -1,0 +1,21 @@
+{
+  "name": "wayne-shop",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev PORT=5886 nodemon ./bin/www",
+    "start": "cross-env NODE_ENV=prod pm2 start"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "debug": "^4.3.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "firebase-admin": "^12.5.0",
+    "firestore-store": "^2.0.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
