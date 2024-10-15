@@ -37,7 +37,7 @@ import API from '../api.js'
 				title:"網站名稱",
 				year: "2024",
 				openModal: false,
-      	modalTyple: ""
+      			modalTyple: ""
 			}
 		},
 		mounted(){
