@@ -1,5 +1,5 @@
 <template>
-  <CourseList :courses="courses"></CourseList>
+  <CourseList :courses="coursesList"></CourseList>
 </template>
 <script>
 import { useMainStore } from '../stores/index.js'
@@ -15,7 +15,8 @@ export default {
 	},
 	data(){
         return {
-            courses:[]
+            courses:[],
+            list:[]
         }
     },
     async created(){
@@ -31,17 +32,31 @@ export default {
         this.courses = data.data;
         //console.log(data.data,"data.data")
 
-        let jwtToken = this.store.id_token;
+		let jwtToken = this.store.id_token;
 
-        let course = await axios({
-           method: API.member.course.method,
-           url: API.member.course.url,
-           headers:{
-             'Content-Type':'application/json'
-           },
-           data:{}
-        })
+        try{
+            let course = await axios({
+            method: API.member.course.method,
+            url: API.member.course.url,
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${jwtToken}`
+            },
+            data:{}
+            })
+			this.list = course.data;
+            console.log(course.data,"course.data")
+        }catch(err){
+            //if(err.status == 401) alert(401)
+            console.log(err,"err To Do")
+        }
 
+
+    },
+    computed: {
+		coursesList(){
+			return this.courses.filter(i=> this.list.some(item => item.id === i.id));
+		}
     },
     components: {
 	  CourseList
